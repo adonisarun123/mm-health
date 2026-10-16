@@ -1,20 +1,44 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #130a1f;
-  --color-ink-2: #1c1029;
-  --color-ink-3: #261837;
-  --color-line: #33254a;
-  --color-paper: #f3eef6;
-  --color-muted: #a797b8;
-  --color-violet: #8a3fd1;
-  --color-leak: #ff4a3d;
-  --color-gold: #ffae45;
-  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  /*
+   * Light, warm palette (Oct 2026 retheme, after alivea.co). Token names are kept from the
+   * dark build so every page moves together: "ink" is now the page/background family and
+   * "paper" is now the text/foreground family. "gold" is the single accent: deep teal.
+   */
+  --color-ink: #fffcf9;      /* page background, warm off-white */
+  --color-ink-2: #fdf3ef;    /* alternate section, warm blush-cream */
+  --color-ink-3: #f3e7e3;    /* chips, tracks, quiet fills */
+  --color-line: #e9dcd7;     /* hairlines and borders */
+  --color-paper: #383435;    /* body text and primary buttons, charcoal */
+  --color-muted: #6b6264;    /* secondary text, 5.9:1 on ink */
+  --color-gold: #12594d;     /* accent, deep teal, 7.6:1 on ink */
+  --color-leak: #c9372c;     /* lost patients, coral red, 5.0:1 on ink */
+  --color-violet: #ffcae5;   /* legacy name, now blush; used only in tints */
+  --color-blush: #ffcae5;
+  --color-butter: #fdffb6;
+  --color-mint: #e4f1ee;
+  --color-lilac: #dedaf4;
+  --font-sans: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Smallest text size is 13px, not Tailwind's 12px: legible on phones. */
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.45;
 }
 
-:root { color-scheme: dark; }
+/* Range inputs: 44px tall hit area, visible track, large thumb for thumbs. */
+.range { -webkit-appearance: none; appearance: none; width: 100%; height: 44px; background: transparent; cursor: pointer; }
+.range::-webkit-slider-runnable-track { height: 6px; border-radius: 999px; background: var(--color-line); }
+.range::-moz-range-track { height: 6px; border-radius: 999px; background: var(--color-line); }
+.range::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; margin-top: -10px; border-radius: 999px; background: var(--color-gold); border: 3px solid var(--color-ink); box-shadow: 0 0 0 1px var(--color-gold); }
+.range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 999px; background: var(--color-gold); border: 3px solid var(--color-ink); }
+.range::-moz-range-progress { height: 6px; border-radius: 999px; background: var(--color-gold); }
+
+/* Hide number-input spinners; we provide our own steppers. */
+.num::-webkit-outer-spin-button, .num::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.num { -moz-appearance: textfield; }
+
+:root { color-scheme: light; }
 html { background: var(--color-ink); scroll-behavior: smooth; }
 body {
   background: var(--color-ink);
@@ -26,26 +50,47 @@ body {
 ::selection { background: var(--color-gold); color: var(--color-ink); }
 :focus-visible { outline: 2px solid var(--color-gold); outline-offset: 3px; border-radius: 4px; }
 
-/* Display type: Archivo pushed wide and heavy. Body stays at normal width. */
+/* Display type: Bricolage Grotesque, heavy, large optical size. */
 .display {
-  font-variation-settings: "wdth" 125;
+  font-variation-settings: "opsz" 96, "wdth" 100;
   font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 0.95;
+  letter-spacing: -0.025em;
+  line-height: 0.98;
 }
 .display-condensed {
-  font-variation-settings: "wdth" 70;
+  font-variation-settings: "opsz" 96, "wdth" 75;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 0.9;
+  letter-spacing: -0.015em;
+  line-height: 0.92;
 }
-.brand-gradient { background: linear-gradient(90deg, var(--color-violet), var(--color-leak) 55%, var(--color-gold)); }
+.brand-gradient { background: linear-gradient(90deg, var(--color-gold), #3f9483); }
 .brand-text {
-  background: linear-gradient(90deg, var(--color-violet), var(--color-leak) 55%, var(--color-gold));
+  background: linear-gradient(90deg, var(--color-gold), #3f9483);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
+/* Soft pastel wash behind hero sections: blush, butter and mint, fading into the page. */
+.wash {
+  background:
+    radial-gradient(60% 70% at 85% 10%, color-mix(in oklab, var(--color-blush) 75%, transparent), transparent 70%),
+    radial-gradient(50% 60% at 15% 30%, color-mix(in oklab, var(--color-butter) 80%, transparent), transparent 70%),
+    radial-gradient(55% 55% at 60% 95%, color-mix(in oklab, var(--color-mint) 90%, transparent), transparent 70%);
+}
+@layer components {
+/* Main conversion pill: butter fill, charcoal outline and a chunky offset shadow (after alivea.co). */
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 44px;
+  background: var(--color-butter); color: var(--color-paper); font-weight: 600;
+  border: 1.5px solid var(--color-paper); border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--color-paper);
+  transition: transform .15s var(--ease-out-quint), box-shadow .15s var(--ease-out-quint);
+}
+.btn-primary:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--color-paper); }
+.btn-primary:disabled { opacity: .6; transform: none; }
+/* Light cards that sit on the wash, as on alivea.co. */
+.card { background: #ffffff; border: 1px solid var(--color-line); border-radius: 28px; box-shadow: 0 20px 50px -30px rgba(56,52,53,.25); }
+}
 .grain::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.06;
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.035;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence baseFrequency='0.85' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 .prose-mm p { color: var(--color-muted); line-height: 1.65; }

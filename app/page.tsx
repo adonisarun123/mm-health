@@ -45,7 +45,7 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="grain relative overflow-hidden pt-28 lg:pt-36">
-        <div aria-hidden="true" className="pointer-events-none absolute -right-40 -top-40 size-[640px] rounded-full bg-violet/20 blur-[140px]" />
+        <div aria-hidden="true" className="wash pointer-events-none absolute inset-0" />
         <div className="relative mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10">
           <p className="text-muted">Marketing technology for doctors, clinics and hospitals</p>
           <h1 className="display mt-5 max-w-[15ch] text-[12vw] sm:text-7xl lg:text-[5.6rem]">
@@ -56,8 +56,8 @@ export default function Home() {
               We get your practice found, book every enquiry into MedDeskOS, and report in patients who turned up. All inside what Indian medical advertising rules permit.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/get-started" className="rounded-full bg-paper px-7 py-3.5 font-semibold text-ink transition-transform hover:-translate-y-px">Get a free growth audit</Link>
-              <a href={SITE.booking} className="rounded-full border border-line px-7 py-3.5 text-paper transition-colors hover:border-paper">Book a 30-minute call</a>
+              <a href="#audit" className="btn-primary px-7 py-3">Get a free growth audit</a>
+              <a href={SITE.booking} className="inline-flex min-h-11 items-center rounded-full border border-paper/70 bg-white px-7 py-3 text-paper transition-colors hover:border-paper">Book a 30-minute call</a>
             </div>
           </div>
         </div>
@@ -67,11 +67,11 @@ export default function Home() {
       </section>
 
       {/* Statement */}
-      <section className="mx-auto max-w-[1320px] px-4 py-24 sm:px-6 lg:px-10 lg:py-36">
-        <p className="display max-w-5xl text-3xl leading-[1.08] sm:text-5xl">
+      <section className="mx-auto max-w-[1320px] px-4 py-16 sm:px-6 lg:px-10 lg:py-28">
+        <p className="display max-w-5xl text-[1.6rem] leading-[1.12] sm:text-4xl lg:text-5xl">
           <span className="text-muted">Patients don&apos;t disappear at the search.</span> They disappear at the missed call after seven, the appointment nobody confirmed, and the clinic four hundred metres away that answered first.
         </p>
-        <p className="mt-10 max-w-2xl text-lg text-muted">
+        <p className="mt-8 max-w-2xl text-lg text-muted">
           So we treat growth as one system: demand, front desk and measurement, run by a single team on one stack.
         </p>
       </section>
@@ -79,7 +79,7 @@ export default function Home() {
       <Stages />
 
       {/* Proof numbers */}
-      <section aria-label="Monk Mantra in numbers" className="border-y border-line">
+      <section aria-label="Monk Mantra in numbers" className="border-y border-line bg-butter/45">
         <dl className="mx-auto grid max-w-[1320px] grid-cols-2 lg:grid-cols-4">
           {[
             ["45+", "doctors served in the last 18 months"],
@@ -99,34 +99,37 @@ export default function Home() {
       </section>
 
       {/* Practices */}
-      <section id="practices" aria-labelledby="pr-h" className="scroll-mt-24 mx-auto max-w-[1320px] px-4 py-24 sm:px-6 lg:px-10 lg:py-36">
+      <section id="practices" aria-labelledby="pr-h" className="scroll-mt-24 mx-auto max-w-[1320px] px-4 py-16 sm:px-6 lg:px-10 lg:py-28">
         <h2 id="pr-h" className="display max-w-3xl text-4xl sm:text-6xl">Built around how your practice works.</h2>
-        <div className="mt-14 divide-y divide-line border-y border-line">
+        <div className="mt-12 divide-y divide-line border-y border-line">
           {PRACTICES.map((p) => (
-            <Link key={p.name} href={p.href} className="group grid gap-4 py-10 transition-colors sm:grid-cols-[1.1fr_1.6fr_auto] sm:items-baseline sm:gap-10">
+            <Link key={p.name} href={p.href} className="group grid gap-3 py-8 transition-colors sm:grid-cols-[1.1fr_1.6fr_auto] sm:items-center sm:gap-10 lg:py-10">
               <h3 className="display text-3xl transition-colors group-hover:text-gold sm:text-4xl">{p.name}</h3>
               <p className="max-w-xl text-muted">{p.body}</p>
-              <p className="whitespace-nowrap text-paper">from <span className="tabular-nums">{p.price}</span>/mo</p>
+              <p className="flex items-center justify-between gap-4 whitespace-nowrap text-paper sm:justify-end">
+                <span>from <span className="font-semibold tabular-nums">{p.price}</span>/mo</span>
+                <span aria-hidden="true" className="grid size-11 place-items-center rounded-full border border-paper/70 bg-white text-lg transition-all group-hover:translate-x-1 group-hover:border-gold group-hover:bg-gold group-hover:text-ink">→</span>
+              </p>
             </Link>
           ))}
         </div>
       </section>
 
       {/* MedDeskOS */}
-      <section aria-labelledby="md-h" className="relative overflow-hidden bg-paper text-ink">
-        <div className="mx-auto grid max-w-[1320px] gap-14 px-4 py-24 sm:px-6 lg:grid-cols-[1.2fr_1fr] lg:px-10 lg:py-32">
+      <section aria-labelledby="md-h" className="relative overflow-hidden bg-mint">
+        <div className="mx-auto grid max-w-[1320px] gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.2fr_1fr] lg:gap-14 lg:px-10 lg:py-28">
           <div>
-            <p className="text-sm text-ink/60">The platform layer</p>
+            <p className="text-sm font-medium text-gold">The platform layer</p>
             <h2 id="md-h" className="display mt-4 text-5xl sm:text-7xl">MedDeskOS</h2>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/75">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-paper/85">
               Our cloud front desk and EMR for Indian outpatient practices. It is where marketing ends and care begins: every booking lands here with its source, and the visit, prescription and invoice join the same record we measure against.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/platform" className="rounded-full bg-ink px-6 py-3 font-semibold text-paper">How MedDeskOS fits</Link>
-              <a href={SITE.meddeskos} className="rounded-full border border-ink/25 px-6 py-3 text-ink hover:border-ink">Visit meddeskos.com</a>
+              <Link href="/platform" className="inline-flex min-h-11 items-center rounded-full bg-gold px-6 py-3 font-semibold text-ink">How MedDeskOS fits</Link>
+              <a href={SITE.meddeskos} className="inline-flex min-h-11 items-center rounded-full border border-paper/40 bg-white px-6 py-3 text-paper hover:border-paper">Visit meddeskos.com</a>
             </div>
           </div>
-          <ul className="grid content-start gap-px overflow-hidden rounded-2xl border border-ink/15 bg-ink/15 sm:grid-cols-2">
+          <ul className="card grid content-start gap-px overflow-hidden bg-line sm:grid-cols-2">
             {[
               ["Live queue", "Reception and consult room on one line of tokens."],
               ["Notes and prescriptions", "SOAP notes, ICD-10, allergy and interaction warnings."],
@@ -135,9 +138,9 @@ export default function Home() {
               ["DPDP-compliant", "Consent at registration and a full audit trail."],
               ["ABDM-ready", "ABHA creation and verification at registration."],
             ].map(([k, v]) => (
-              <li key={k} className="bg-paper p-5">
+              <li key={k} className="bg-white p-5">
                 <p className="font-semibold">{k}</p>
-                <p className="mt-1 text-sm text-ink/65">{v}</p>
+                <p className="mt-1 text-sm text-muted">{v}</p>
               </li>
             ))}
           </ul>
@@ -147,7 +150,7 @@ export default function Home() {
       <LeakEstimator />
 
       {/* Compliance */}
-      <section aria-labelledby="law-h" className="mx-auto max-w-[1320px] px-4 py-24 sm:px-6 lg:px-10 lg:py-36">
+      <section aria-labelledby="law-h" className="mx-auto max-w-[1320px] px-4 py-16 sm:px-6 lg:px-10 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
           <div>
             <h2 id="law-h" className="display text-4xl sm:text-5xl">What healthcare can and cannot say in India.</h2>
@@ -168,16 +171,16 @@ export default function Home() {
 
       {/* Process */}
       <section aria-labelledby="pro-h" className="border-t border-line">
-        <div className="mx-auto max-w-[1320px] px-4 py-24 sm:px-6 lg:px-10 lg:py-32">
+        <div className="mx-auto max-w-[1320px] px-4 py-16 sm:px-6 lg:px-10 lg:py-28">
           <h2 id="pro-h" className="display max-w-3xl text-4xl sm:text-6xl">The first month should pay for itself.</h2>
-          <ol className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="card mt-12 grid gap-px overflow-hidden bg-line sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((s, i) => (
-              <li key={s.title} className="bg-ink p-7">
+              <li key={s.title} className="bg-white p-7">
                 <p className="flex items-center justify-between text-sm text-muted">
                   <span>{s.when}</span>
                   <span className="display-condensed text-3xl text-gold tabular-nums">{i + 1}</span>
                 </p>
-                <h3 className="mt-10 text-xl font-semibold text-paper">{s.title}</h3>
+                <h3 className="mt-6 text-xl font-semibold text-paper">{s.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{s.body}</p>
               </li>
             ))}
@@ -187,14 +190,14 @@ export default function Home() {
 
       {/* FAQ */}
       <section aria-labelledby="faq-h" className="border-t border-line">
-        <div className="mx-auto grid max-w-[1320px] gap-12 px-4 py-24 sm:px-6 lg:grid-cols-[1fr_1.6fr] lg:px-10 lg:py-32">
+        <div className="mx-auto grid max-w-[1320px] gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_1.6fr] lg:px-10 lg:py-28">
           <h2 id="faq-h" className="display text-4xl sm:text-5xl">Questions doctors ask us.</h2>
           <div className="divide-y divide-line border-y border-line">
             {FAQ.map((f) => (
               <details key={f.q} className="group py-6">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg text-paper [&::-webkit-details-marker]:hidden">
+                <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-6 text-lg font-medium text-paper [&::-webkit-details-marker]:hidden">
                   {f.q}
-                  <span aria-hidden="true" className="grid size-8 shrink-0 place-items-center rounded-full border border-line text-muted transition-transform group-open:rotate-45">+</span>
+                  <span aria-hidden="true" className="grid size-9 shrink-0 place-items-center rounded-full border border-line bg-white text-paper transition-transform group-open:rotate-45">+</span>
                 </summary>
                 <p className="mt-4 max-w-2xl leading-relaxed text-muted">{f.a}</p>
               </details>
@@ -204,18 +207,19 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section id="audit" aria-labelledby="cta-h" className="scroll-mt-24 border-t border-line bg-ink-2">
-        <div className="mx-auto grid max-w-[1320px] gap-12 px-4 py-24 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:gap-20 lg:px-10 lg:py-32">
+      <section id="audit" aria-labelledby="cta-h" className="relative scroll-mt-24 overflow-hidden border-t border-line bg-ink-2">
+        <div aria-hidden="true" className="wash pointer-events-none absolute inset-0 opacity-70" />
+        <div className="relative mx-auto grid max-w-[1320px] gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:gap-20 lg:px-10 lg:py-28">
           <div>
             <h2 id="cta-h" className="display text-5xl sm:text-6xl">Find the patients you are already losing.</h2>
             <p className="mt-6 max-w-md text-lg text-muted">
-              Send your practice name. You get a written audit of your local visibility, ad waste and booking friction, specific to your catchment, with no obligation.
+              Send your name, number and practice. You get a written audit of your local visibility, ad waste and booking friction, specific to your catchment, with no obligation.
             </p>
             <p className="mt-6 text-sm text-muted">
-              Prefer to talk? <a href={SITE.whatsapp} className="text-paper underline underline-offset-4 hover:text-gold">WhatsApp {SITE.phone}</a>
+              Prefer to talk? <a href={SITE.whatsapp} className="inline-block py-3 font-semibold text-gold underline underline-offset-4">WhatsApp {SITE.phone}</a>
             </p>
           </div>
-          <LeadForm source="home" />
+          <div className="card p-6 sm:p-8"><LeadForm source="home" /></div>
         </div>
       </section>
 

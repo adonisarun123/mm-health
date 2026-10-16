@@ -26,7 +26,7 @@ export default function About() {
   return (
     <>
       <section className="grain relative overflow-hidden pb-20 pt-32 lg:pb-28 lg:pt-44">
-        <div aria-hidden="true" className="pointer-events-none absolute -right-48 -top-48 size-[560px] rounded-full bg-violet/20 blur-[140px]" />
+        <div aria-hidden="true" className="wash pointer-events-none absolute inset-0" />
         <div className="relative mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10">
           <h1 className="display max-w-[16ch] text-5xl sm:text-7xl">A marketing and engineering team that only works in healthcare.</h1>
           <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-16">

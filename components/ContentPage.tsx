@@ -64,7 +64,7 @@ export function ContentPage({ data: d }: { data: ContentPageData }) {
     <>
       {/* Hero */}
       <section className="grain relative overflow-hidden pb-20 pt-28 lg:pb-28 lg:pt-36">
-        <div aria-hidden="true" className="pointer-events-none absolute -right-48 -top-48 size-[560px] rounded-full bg-violet/20 blur-[140px]" />
+        <div aria-hidden="true" className="wash pointer-events-none absolute inset-0" />
         <div className={`relative ${WRAP}`}>
           <nav aria-label="Breadcrumb">
             <ol className="flex flex-wrap gap-x-2 text-sm text-muted">

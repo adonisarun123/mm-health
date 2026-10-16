@@ -45,16 +45,16 @@ const COLS = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-line bg-ink">
+    <footer className="relative overflow-hidden border-t border-line bg-mint">
       <div className="mx-auto max-w-[1320px] px-4 pt-20 sm:px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_2fr]">
           <div className="max-w-sm">
             <p className="text-lg leading-snug text-paper">
               The marketing and software team for doctors, clinics and hospitals. We get you found, run your front desk, and report in patients who actually walked in.
             </p>
-            <div className="mt-6 space-y-1 text-muted">
-              <a className="block hover:text-paper" href={`mailto:${SITE.email}`}>{SITE.email}</a>
-              <a className="block hover:text-paper" href={SITE.phoneHref}>{SITE.phone}</a>
+            <div className="mt-6 text-muted">
+              <a className="flex min-h-11 items-center hover:text-paper" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              <a className="flex min-h-11 items-center hover:text-paper" href={SITE.phoneHref}>{SITE.phone}</a>
               <p>Serving India from {SITE.city}</p>
             </div>
           </div>
@@ -62,10 +62,10 @@ export function Footer() {
             {COLS.map((c) => (
               <div key={c.title}>
                 <h2 className="text-sm font-semibold text-paper">{c.title}</h2>
-                <ul className="mt-4 space-y-2.5">
+                <ul className="mt-3 space-y-0.5">
                   {c.links.map(([label, href]) => (
                     <li key={href}>
-                      <Link href={href} className="text-sm text-muted transition-colors hover:text-paper">{label}</Link>
+                      <Link href={href} prefetch={false} className="inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-paper lg:min-h-9">{label}</Link>
                     </li>
                   ))}
                 </ul>
@@ -76,17 +76,17 @@ export function Footer() {
 
         <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-line py-6 text-sm text-muted">
           <p>© {new Date().getFullYear()} Monk Mantra. All rights reserved.</p>
-          <div className="flex flex-wrap gap-5">
-            <Link href="/privacy-policy" className="hover:text-paper">Privacy</Link>
-            <Link href="/terms-of-service" className="hover:text-paper">Terms</Link>
-            <Link href="/cookie-policy" className="hover:text-paper">Cookies</Link>
-            <a href={SITE.social.linkedin} className="hover:text-paper">LinkedIn</a>
-            <a href={SITE.social.instagram} className="hover:text-paper">Instagram</a>
-            <a href={SITE.social.x} className="hover:text-paper">X</a>
+          <div className="flex flex-wrap gap-x-5">
+            <Link href="/privacy-policy" prefetch={false} className="inline-flex min-h-11 items-center hover:text-paper">Privacy</Link>
+            <Link href="/terms-of-service" prefetch={false} className="inline-flex min-h-11 items-center hover:text-paper">Terms</Link>
+            <Link href="/cookie-policy" prefetch={false} className="inline-flex min-h-11 items-center hover:text-paper">Cookies</Link>
+            <a href={SITE.social.linkedin} className="inline-flex min-h-11 items-center hover:text-paper">LinkedIn</a>
+            <a href={SITE.social.instagram} className="inline-flex min-h-11 items-center hover:text-paper">Instagram</a>
+            <a href={SITE.social.x} className="inline-flex min-h-11 items-center hover:text-paper">X</a>
           </div>
         </div>
       </div>
-      <p aria-hidden="true" className="display pointer-events-none select-none whitespace-nowrap px-2 pb-2 text-center text-[17.5vw] leading-[0.8] text-ink-3">
+      <p aria-hidden="true" className="display pointer-events-none select-none whitespace-nowrap px-2 pb-2 text-center text-[17.5vw] leading-[0.8] text-[#cfe5df]">
         monk mantra
       </p>
     </footer>

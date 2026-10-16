@@ -50,7 +50,7 @@ export function Stages() {
   const ActivePanel = STAGES[active].Panel;
 
   return (
-    <section aria-labelledby="stages-h" className="relative mx-auto max-w-[1320px] px-4 py-24 sm:px-6 lg:px-10 lg:py-36">
+    <section aria-labelledby="stages-h" className="relative mx-auto max-w-[1320px] px-4 pb-16 pt-4 sm:px-6 lg:px-10 lg:pb-24 lg:pt-8">
       <h2 id="stages-h" className="display max-w-4xl text-4xl sm:text-6xl">
         One team from search result to seated patient.
       </h2>
@@ -58,7 +58,7 @@ export function Stages() {
         Most agencies stop at the enquiry. In a clinic the enquiry is the easy part, so we run all three stages on one stack.
       </p>
 
-      <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
+      <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
         <div>
           {STAGES.map((s, i) => {
             const P = s.Panel;
@@ -67,10 +67,10 @@ export function Stages() {
                 key={s.name}
                 ref={(el) => { refs.current[i] = el; }}
                 data-i={i}
-                className={`border-t border-line py-12 transition-opacity duration-500 lg:min-h-[78vh] lg:py-16 ${active === i ? "lg:opacity-100" : "lg:opacity-35"}`}
+                className="border-t border-line py-10 lg:min-h-[62vh] lg:py-14"
               >
                 <p className="flex items-center gap-3 text-sm">
-                  <span className="grid size-7 place-items-center rounded-full border border-gold text-gold tabular-nums">{i + 1}</span>
+                  <span className={`grid size-7 place-items-center rounded-full border border-gold tabular-nums transition-colors ${active === i ? "bg-gold text-ink" : "text-gold"}`}>{i + 1}</span>
                   <span className="text-muted">{s.name}</span>
                 </p>
                 <h3 className="display mt-4 text-3xl sm:text-4xl">{s.title}</h3>
@@ -83,8 +83,8 @@ export function Stages() {
                     </li>
                   ))}
                 </ul>
-                <Link href={s.href} className="mt-8 inline-block border-b border-paper/40 pb-0.5 text-paper hover:border-gold hover:text-gold">
-                  How {s.name.toLowerCase()} works
+                <Link href={s.href} className="mt-6 inline-flex min-h-11 items-center gap-2 font-semibold text-gold underline decoration-gold/40 underline-offset-4 hover:decoration-gold">
+                  How {s.name.toLowerCase()} works <span aria-hidden="true">→</span>
                 </Link>
                 <div className="mt-10 lg:hidden">
                   <P />

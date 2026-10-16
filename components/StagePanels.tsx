@@ -2,7 +2,7 @@
 
 function Frame({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-line bg-ink-2 shadow-[0_40px_80px_-40px_rgba(0,0,0,.8)]">
+    <div className="card overflow-hidden">
       <div className="flex items-center gap-2 border-b border-line px-4 py-3">
         <span className="size-2.5 rounded-full bg-line" />
         <span className="size-2.5 rounded-full bg-line" />
