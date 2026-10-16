@@ -1,0 +1,65 @@
+import type { Metadata, Viewport } from "next";
+import { Archivo } from "next/font/google";
+import "./globals.css";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { SITE } from "@/lib/site";
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  axes: ["wdth"],
+  variable: "--font-archivo",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: "Monk Mantra | Marketing technology for doctors, clinics and hospitals",
+    template: "%s | Monk Mantra",
+  },
+  description:
+    "Monk Mantra is the marketing and software team for healthcare in India. We get practices found, run the front desk on MedDeskOS, and report in attended patients, inside medical advertising rules.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: SITE.name,
+    url: SITE.url,
+    title: "Monk Mantra | Marketing technology for healthcare",
+    description:
+      "Get found, convert enquiries into attended appointments, and measure cost per seated patient. Built for doctors, clinics and hospitals.",
+  },
+  twitter: { card: "summary_large_image", site: "@mantra_monk" },
+  robots: { index: true, follow: true },
+};
+
+export const viewport: Viewport = { themeColor: "#130a1f" };
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: SITE.name,
+  url: SITE.url,
+  email: SITE.email,
+  telephone: SITE.phone,
+  areaServed: "IN",
+  address: { "@type": "PostalAddress", addressLocality: "Bengaluru", addressRegion: "Karnataka", addressCountry: "IN" },
+  description: "Marketing technology for doctors, clinics and hospitals: search, ads, reputation, MedDeskOS and custom front-desk software.",
+  sameAs: Object.values(SITE.social),
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en-IN" className={archivo.variable}>
+      <body className="min-h-dvh">
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-paper focus:px-4 focus:py-2 focus:text-ink">
+          Skip to content
+        </a>
+        <Header />
+        <main id="main">{children}</main>
+        <Footer />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
+      </body>
+    </html>
+  );
+}
