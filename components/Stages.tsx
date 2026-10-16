@@ -15,8 +15,8 @@ const STAGES = [
   {
     name: "Convert",
     title: "Turn enquiries into people in the chair",
-    body: "This is where most growth is lost. MedDeskOS answers on WhatsApp, books against your real slot rules, sends two reminders and recovers missed calls. When it doesn't fit, our engineers build what does.",
-    items: ["MedDeskOS: queue, EMR, billing", "WhatsApp confirmations and reschedules", "Booking built to your slot rules", "Patient CRM and recall"],
+    body: "This is where most growth is lost. Bookings land in MedDeskOS with their source attached, and our WhatsApp automation confirms, reminds, reschedules and recovers missed calls. When something doesn't fit, our engineers build what does.",
+    items: ["MedDeskOS: queue, EMR, billing", "WhatsApp confirmations and reminders", "Booking built to your slot rules", "Patient CRM and recall"],
     href: "/platform",
     Panel: ConvertPanel,
   },

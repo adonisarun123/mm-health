@@ -38,6 +38,7 @@ export const viewport: Viewport = { themeColor: "#130a1f" };
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": `${SITE.url}/#organization`,
   name: SITE.name,
   url: SITE.url,
   email: SITE.email,

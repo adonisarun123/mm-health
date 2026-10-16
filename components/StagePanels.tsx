@@ -55,7 +55,7 @@ export function ConvertPanel() {
     { me: false, t: "Done. We'll remind you the evening before and two hours before." },
   ];
   return (
-    <Frame title="MedDeskOS · WhatsApp front desk">
+    <Frame title="WhatsApp automation, booking into MedDeskOS">
       <div className="space-y-2.5">
         {msgs.map((m, i) => (
           <div key={i} className={`flex ${m.me ? "justify-end" : "justify-start"}`}>

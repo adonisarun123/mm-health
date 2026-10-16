@@ -53,7 +53,7 @@ export default function Home() {
           </h1>
           <div className="mt-8 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <p className="max-w-xl text-lg leading-relaxed text-muted">
-              We get your practice found, answer and book every enquiry on MedDeskOS, and report in patients who turned up. All inside what Indian medical advertising rules permit.
+              We get your practice found, book every enquiry into MedDeskOS, and report in patients who turned up. All inside what Indian medical advertising rules permit.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/get-started" className="rounded-full bg-paper px-7 py-3.5 font-semibold text-ink transition-transform hover:-translate-y-px">Get a free growth audit</Link>
@@ -119,7 +119,7 @@ export default function Home() {
             <p className="text-sm text-ink/60">The platform layer</p>
             <h2 id="md-h" className="display mt-4 text-5xl sm:text-7xl">MedDeskOS</h2>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/75">
-              Our cloud front desk and EMR for Indian outpatient practices. It is where marketing ends and care begins: every enquiry lands here, gets a slot, gets reminded, and becomes a record we can measure against.
+              Our cloud front desk and EMR for Indian outpatient practices. It is where marketing ends and care begins: every booking lands here with its source, and the visit, prescription and invoice join the same record we measure against.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/platform" className="rounded-full bg-ink px-6 py-3 font-semibold text-paper">How MedDeskOS fits</Link>
@@ -128,12 +128,12 @@ export default function Home() {
           </div>
           <ul className="grid content-start gap-px overflow-hidden rounded-2xl border border-ink/15 bg-ink/15 sm:grid-cols-2">
             {[
-              ["Queue and appointments", "Walk-ins and bookings in one line, per doctor."],
-              ["Encounters and prescriptions", "Fast notes and printable prescriptions."],
-              ["Billing and invoices", "Bills raised from the same visit record."],
-              ["Reminders and recall", "WhatsApp confirmations, follow-ups and recall."],
-              ["DPDP-aligned by design", "Consent, retention and access controls."],
-              ["ABDM-ready", "Built to connect to India's health stack."],
+              ["Live queue", "Reception and consult room on one line of tokens."],
+              ["Notes and prescriptions", "SOAP notes, ICD-10, allergy and interaction warnings."],
+              ["Billing", "GST-ready invoices on cash, UPI and card."],
+              ["Bookings with their source", "Every appointment knows where the patient came from."],
+              ["DPDP-compliant", "Consent at registration and a full audit trail."],
+              ["ABDM-ready", "ABHA creation and verification at registration."],
             ].map(([k, v]) => (
               <li key={k} className="bg-paper p-5">
                 <p className="font-semibold">{k}</p>
