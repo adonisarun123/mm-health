@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo } from "next/font/google";
+import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -60,6 +63,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <Footer />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${SITE.ga4}`} strategy="afterInteractive" />
+        <Script id="ga4" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${SITE.ga4}');`}
+        </Script>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

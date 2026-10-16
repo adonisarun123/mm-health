@@ -1,0 +1,7 @@
+{
+ "slug": "cookie-policy",
+ "title": "Cookie Policy",
+ "description": "The cookies the Monk Mantra website uses and how to control them.",
+ "updated": "October 16, 2026",
+ "html": "<p>Cookies are small files a website stores in your browser. This page lists the ones this site uses.</p>\n<h2>Cookies we set</h2>\n<table><thead><tr><th>Cookie</th><th>Set by</th><th>Purpose</th><th>Lasts</th></tr></thead><tbody>\n<tr><td>_ga</td><td>Google Analytics 4</td><td>Tells visits apart so we can count visitors</td><td>2 years</td></tr>\n<tr><td>_ga_Z5S619DME1</td><td>Google Analytics 4</td><td>Keeps track of a visit session</td><td>2 years</td></tr>\n</tbody></table>\n<p>Vercel Web Analytics and Speed Insights measure page views and loading speed without setting cookies.</p>\n<h2>Cookies we do not set</h2><p>This site does not currently use advertising, retargeting or social-media tracking cookies. If that changes, we will update this page first.</p>\n<h2>Your choices</h2><p>You can block or delete cookies in your browser settings, or use Google's opt-out browser add-on for Analytics. The site works normally without them.</p>\n<p>Questions: <a href=\"mailto:hello@monkmantra.com\">hello@monkmantra.com</a>. See also our <a href=\"/privacy-policy\">Privacy Policy</a>.</p>"
+}

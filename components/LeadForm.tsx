@@ -21,6 +21,8 @@ export function LeadForm({ source = "website" }: { source?: string }) {
       const json = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(json.error || "We couldn't send that. Check the fields and try again.");
       setState("sent");
+      // GA4 conversion: mark "generate_lead" as a key event in GA4 admin.
+      (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.("event", "generate_lead", { form_source: source, practice_type: String(data.practiceType || "") });
     } catch (err) {
       setError(err instanceof Error ? err.message : "We couldn't send that. Try again or email hello@monkmantra.com.");
       setState("error");
@@ -73,7 +75,7 @@ export function LeadForm({ source = "website" }: { source?: string }) {
         <button type="submit" disabled={state === "sending"} className="rounded-full bg-paper px-7 py-3.5 font-semibold text-ink transition-transform hover:-translate-y-px disabled:opacity-60">
           {state === "sending" ? "Sending…" : "Get my free audit"}
         </button>
-        <p className="text-xs text-muted">We use your details only to reply. See our privacy policy.</p>
+        <p className="text-xs text-muted">We use your details only to reply. See our <a href="/privacy-policy" className="underline underline-offset-2 hover:text-paper">privacy policy</a>.</p>
       </div>
       {state === "error" && <p className="text-sm text-leak sm:col-span-2" role="alert">{error}</p>}
     </form>

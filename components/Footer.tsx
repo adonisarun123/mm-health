@@ -79,6 +79,7 @@ export function Footer() {
           <div className="flex flex-wrap gap-5">
             <Link href="/privacy-policy" className="hover:text-paper">Privacy</Link>
             <Link href="/terms-of-service" className="hover:text-paper">Terms</Link>
+            <Link href="/cookie-policy" className="hover:text-paper">Cookies</Link>
             <a href={SITE.social.linkedin} className="hover:text-paper">LinkedIn</a>
             <a href={SITE.social.instagram} className="hover:text-paper">Instagram</a>
             <a href={SITE.social.x} className="hover:text-paper">X</a>

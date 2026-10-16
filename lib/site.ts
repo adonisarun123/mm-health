@@ -8,6 +8,8 @@ export const SITE = {
   booking: "https://tidycal.com/monk-mantra/client-onboarding-and-discovery-sessions",
   city: "Bengaluru, India",
   meddeskos: "https://meddeskos.com",
+  /** Same GA4 property as the old site, so reporting continues unbroken. */
+  ga4: "G-Z5S619DME1",
   social: {
     linkedin: "https://www.linkedin.com/company/monk-mantra/",
     x: "https://x.com/mantra_monk",
