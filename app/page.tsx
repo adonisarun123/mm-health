@@ -11,6 +11,18 @@ const PRACTICES = [
   { name: "Hospitals", price: PRICE.hospital, href: "/healthcare-marketing/hospitals", body: "Departments, branches and specialists, each needing their own demand and their own numbers." },
 ];
 
+const SECTORS = [
+  { name: "E-commerce & D2C", href: "/industries/ecommerce", body: "Contribution margin over revenue, COD and RTO economics, retention before scale." },
+  { name: "SaaS & technology", href: "/industries/saas", body: "Bottom-of-funnel content and pipeline metrics, not MQL counts." },
+  { name: "Hospitality & travel", href: "/industries/hospitality", body: "Shift the mix toward direct bookings without losing OTA visibility." },
+  { name: "Real estate", href: "/industries/real-estate", body: "RERA-safe advertising, measured per site visit, not per lead." },
+  { name: "Education", href: "/industries/education", body: "Enrolments planned against the admission calendar." },
+  { name: "Financial services", href: "/industries/financial", body: "Acquisition inside SEBI, RBI and IRDAI advertising rules." },
+  { name: "Professional services", href: "/industries/professional-services", body: "Growth for firms whose regulators restrict advertising." },
+  { name: "Manufacturing & B2B", href: "/industries/manufacturing", body: "Specification depth, part-level search and export enquiries." },
+  { name: "Nonprofit", href: "/industries/nonprofit", body: "Recurring giving, CSR funding and the FCRA and 80G realities." },
+];
+
 const RULES = [
   { law: "MCI Code of Ethics 2002, Regulation 6.1", body: "Doctors may not solicit patients or self-promote in ways that tout or exaggerate. The NMC's 2023 replacement was placed in abeyance, so the 2002 code still applies." },
   { law: "Drugs and Magic Remedies Act, 1954", body: "Advertising treatment to the public for a scheduled list of conditions, including infertility, obesity, diabetes and cancer, is a criminal offence. It applies to everyone." },
@@ -26,12 +38,12 @@ const STEPS = [
 ];
 
 const FAQ = [
-  { q: "What does Monk Mantra do?", a: "We are a marketing and software team for healthcare. We run local search, SEO, Google Ads, content and reputation for doctors, clinics and hospitals, within Indian medical advertising rules. We also run the front desk on MedDeskOS and build custom tools, so enquiries turn into attended appointments." },
+  { q: "What does Monk Mantra do?", a: "We are a performance marketing and software team in Bengaluru. We run SEO, paid media, content, conversion and analytics for Indian businesses across ten sectors. Healthcare is our deepest practice: for doctors, clinics and hospitals we also run the front desk on MedDeskOS and build custom tools, so enquiries turn into attended appointments." },
   { q: "Can doctors legally advertise in India?", a: "Doctors cannot solicit patients or make promotional claims. They can be accurately listed, explain conditions and treatments, publish their qualifications and timings, and make it easy to book. Most of the growth we deliver comes from that permitted ground, done properly." },
   { q: "How long does it take to work?", a: "Leak fixes such as profiles, tracking, missed-call recovery and reminders usually show within the first month. Organic search compounds over three to six months, depending on your speciality and how competitive your catchment is." },
-  { q: "How much does it cost?", a: `Retainers start from ${PRICE.doctor} a month for individual doctors, ${PRICE.clinic} for clinics and ${PRICE.hospital} for hospitals. Custom tools start from ${PRICE.singleTool} one-time. Every figure is scoped against what you actually need.` },
+  { q: "How much does it cost?", a: `Retainers start from ${PRICE.doctor} a month for individual doctors, ${PRICE.clinic} for clinics and ${PRICE.hospital} for hospitals. Custom tools start from ${PRICE.singleTool} one-time. Other sectors start from ₹10,000 a month depending on scope. Every figure is scoped against what you actually need.` },
   { q: "Why does a marketing team run software?", a: "Because in a clinic the enquiry is the easy part. If calls after seven go unanswered and nobody confirms appointments, more marketing just buys more leaks. MedDeskOS and our custom tools close that gap, and give us the attended-patient numbers we report on." },
-  { q: "Do you work outside healthcare?", a: "No. We work only with doctors, clinics, hospitals and diagnostic centres. That focus is why we know the rules and the patient journey well." },
+  { q: "Do you work outside healthcare?", a: "Yes. We work with e-commerce and D2C brands, SaaS companies, hotels and homestays, developers, schools, financial firms, professional practices, manufacturers and nonprofits. Healthcare is where we go deepest, because its rules and its front-desk gap reward specialisation, but the same measurement discipline runs through every sector." },
 ];
 
 export default function Home() {
@@ -47,13 +59,13 @@ export default function Home() {
       <section className="grain relative overflow-hidden pt-28 lg:pt-36">
         <div aria-hidden="true" className="wash pointer-events-none absolute inset-0" />
         <div className="relative mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10">
-          <p className="text-muted">Marketing technology for doctors, clinics and hospitals</p>
+          <p className="text-muted">Performance marketing and growth technology, deepest in healthcare</p>
           <h1 className="display mt-5 max-w-[15ch] text-[12vw] sm:text-7xl lg:text-[5.6rem]">
-            Every patient who looked for you, accounted for.
+            Every customer who looked for you, accounted for.
           </h1>
           <div className="mt-8 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <p className="max-w-xl text-lg leading-relaxed text-muted">
-              We get your practice found, book every enquiry into MedDeskOS, and report in patients who turned up. All inside what Indian medical advertising rules permit.
+              We get you found, close the gaps between the enquiry and the sale, and report in customers rather than clicks. For doctors, clinics and hospitals, that runs all the way to patients who turned up, on MedDeskOS.
             </p>
             <div className="flex flex-wrap gap-3">
               <a href="#audit" className="btn-primary px-7 py-3">Get a free growth audit</a>
@@ -69,7 +81,7 @@ export default function Home() {
       {/* Statement */}
       <section className="mx-auto max-w-[1320px] px-4 py-16 sm:px-6 lg:px-10 lg:py-28">
         <p className="display max-w-5xl text-[1.6rem] leading-[1.12] sm:text-4xl lg:text-5xl">
-          <span className="text-muted">Patients don&apos;t disappear at the search.</span> They disappear at the missed call after seven, the appointment nobody confirmed, and the clinic four hundred metres away that answered first.
+          <span className="text-muted">Customers don&apos;t disappear at the search.</span> They disappear at the missed call after seven, the enquiry nobody followed up, and the competitor who answered first. In a clinic, that is a patient who went four hundred metres down the road.
         </p>
         <p className="mt-8 max-w-2xl text-lg text-muted">
           So we treat growth as one system: demand, front desk and measurement, run by a single team on one stack.
@@ -98,9 +110,40 @@ export default function Home() {
         </dl>
       </section>
 
+      {/* Sectors */}
+      <section id="sectors" aria-labelledby="sec-h" className="scroll-mt-24 mx-auto max-w-[1320px] px-4 py-16 sm:px-6 lg:px-10 lg:py-28">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <h2 id="sec-h" className="display max-w-3xl text-4xl sm:text-6xl">Ten sectors. One goes deeper.</h2>
+          <Link href="/industries" className="inline-flex min-h-11 items-center text-paper underline underline-offset-4 hover:text-gold">How the work differs by sector →</Link>
+        </div>
+        <div className="group relative mt-12 grid gap-6 rounded-3xl bg-mint p-8 transition-colors sm:p-10 lg:grid-cols-[1.4fr_1fr] lg:items-end">
+          <div>
+            <p className="text-sm text-muted">Our deepest practice</p>
+            <h3 className="display mt-3 text-4xl sm:text-5xl group-hover:text-gold">
+              <Link href="/healthcare-marketing" className="after:absolute after:inset-0 after:rounded-3xl">Healthcare</Link>
+            </h3>
+            <p className="mt-4 max-w-xl text-lg text-muted">Doctors, clinics, hospitals and diagnostics: compliant patient acquisition, the front desk on MedDeskOS, and reporting in attended patients. Plus a separate practice for <Link href="/industries/healthcare" className="relative z-10 inline-block py-2 text-paper underline underline-offset-2 hover:text-gold">pharma, medtech and wellness brands</Link>.</p>
+          </div>
+          <p className="flex items-center justify-between gap-4 text-paper lg:justify-end">
+            <span>45+ doctors in 18 months</span>
+            <span aria-hidden="true" className="grid size-11 place-items-center rounded-full border border-paper/70 bg-white text-lg transition-all group-hover:translate-x-1 group-hover:border-gold group-hover:bg-gold group-hover:text-ink">→</span>
+          </p>
+        </div>
+        <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {SECTORS.map((s) => (
+            <li key={s.href}>
+              <Link href={s.href} className="group block h-full rounded-2xl border border-line bg-white p-6 transition-colors hover:border-gold">
+                <h3 className="text-xl font-semibold text-paper group-hover:text-gold">{s.name}</h3>
+                <p className="mt-2 text-muted">{s.body}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       {/* Practices */}
       <section id="practices" aria-labelledby="pr-h" className="scroll-mt-24 mx-auto max-w-[1320px] px-4 py-16 sm:px-6 lg:px-10 lg:py-28">
-        <h2 id="pr-h" className="display max-w-3xl text-4xl sm:text-6xl">Built around how your practice works.</h2>
+        <h2 id="pr-h" className="display max-w-3xl text-4xl sm:text-6xl">For healthcare, built around how your practice works.</h2>
         <div className="mt-12 divide-y divide-line border-y border-line">
           {PRACTICES.map((p) => (
             <Link key={p.name} href={p.href} className="group grid gap-3 py-8 transition-colors sm:grid-cols-[1.1fr_1.6fr_auto] sm:items-center sm:gap-10 lg:py-10">
@@ -191,7 +234,7 @@ export default function Home() {
       {/* FAQ */}
       <section aria-labelledby="faq-h" className="border-t border-line">
         <div className="mx-auto grid max-w-[1320px] gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_1.6fr] lg:px-10 lg:py-28">
-          <h2 id="faq-h" className="display text-4xl sm:text-5xl">Questions doctors ask us.</h2>
+          <h2 id="faq-h" className="display text-4xl sm:text-5xl">Questions we get asked.</h2>
           <div className="divide-y divide-line border-y border-line">
             {FAQ.map((f) => (
               <details key={f.q} className="group py-6">
@@ -211,9 +254,9 @@ export default function Home() {
         <div aria-hidden="true" className="wash pointer-events-none absolute inset-0 opacity-70" />
         <div className="relative mx-auto grid max-w-[1320px] gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:gap-20 lg:px-10 lg:py-28">
           <div>
-            <h2 id="cta-h" className="display text-5xl sm:text-6xl">Find the patients you are already losing.</h2>
+            <h2 id="cta-h" className="display text-5xl sm:text-6xl">Find the customers you are already losing.</h2>
             <p className="mt-6 max-w-md text-lg text-muted">
-              Send your name, number and practice. You get a written audit of your local visibility, ad waste and booking friction, specific to your catchment, with no obligation.
+              Send your name, number and business. You get a written audit of your search visibility, ad waste and enquiry-to-sale friction, with no obligation.
             </p>
             <p className="mt-6 text-sm text-muted">
               Prefer to talk? <a href={SITE.whatsapp} className="inline-block py-3 font-semibold text-gold underline underline-offset-4">WhatsApp {SITE.phone}</a>

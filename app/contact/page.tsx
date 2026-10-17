@@ -4,7 +4,7 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Monk Mantra",
-  description: "Talk to Monk Mantra about marketing and front-desk software for your practice. WhatsApp, email, or book a 30-minute call.",
+  description: "Talk to Monk Mantra about marketing and growth software for your business or practice. WhatsApp, email, or book a 30-minute call.",
   alternates: { canonical: "/contact" },
 };
 
@@ -19,7 +19,7 @@ export default function Contact() {
     <section className="mx-auto grid max-w-[1320px] gap-12 px-4 pb-24 pt-32 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:gap-20 lg:px-10 lg:pt-44">
       <div>
         <h1 className="display text-5xl sm:text-6xl">Talk to us.</h1>
-        <p className="mt-6 max-w-md text-lg text-muted">Tell us about your practice and what you want fixed. We reply within one working day.</p>
+        <p className="mt-6 max-w-md text-lg text-muted">Tell us about your business and what you want fixed. We reply within one working day.</p>
         <ul className="mt-12 divide-y divide-line border-y border-line">
           {WAYS.map((w) => (
             <li key={w.label}>

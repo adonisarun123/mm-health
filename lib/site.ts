@@ -36,10 +36,10 @@ export const PRICE = {
 } as const;
 
 export const NAV = [
-  { label: "Get found", href: "/healthcare-marketing" },
-  { label: "Front desk", href: "/custom-tools" },
+  { label: "Healthcare", href: "/healthcare-marketing" },
+  { label: "Industries", href: "/industries" },
+  { label: "Services", href: "/services" },
   { label: "MedDeskOS", href: "/platform" },
-  { label: "Who we serve", href: "/#practices" },
   { label: "Notes", href: "/blog" },
   { label: "About", href: "/about" },
 ] as const;

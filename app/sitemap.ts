@@ -9,6 +9,13 @@ const ROUTES: [string, number][] = [
   ["/healthcare-marketing/google-ads-for-doctors", 0.9], ["/healthcare-marketing/reputation-management", 0.9], ["/healthcare-marketing/patient-acquisition", 0.9],
   ["/custom-tools", 0.95], ["/custom-tools/for-doctors", 0.85], ["/custom-tools/for-clinics", 0.85], ["/custom-tools/for-hospitals", 0.85],
   ["/custom-tools/patient-appointment-booking-system", 0.9], ["/custom-tools/whatsapp-automation-for-clinics", 0.9], ["/custom-tools/patient-crm", 0.9],
+  ["/industries", 0.85], ["/industries/healthcare", 0.85], ["/industries/ecommerce", 0.8], ["/industries/saas", 0.8], ["/industries/hospitality", 0.8],
+  ["/industries/real-estate", 0.8], ["/industries/education", 0.8], ["/industries/financial", 0.8], ["/industries/professional-services", 0.8],
+  ["/industries/manufacturing", 0.8], ["/industries/nonprofit", 0.8],
+  ["/services", 0.85], ["/services/seo-organic-growth", 0.8], ["/services/ppc-management", 0.8], ["/services/content-marketing", 0.8],
+  ["/services/social-media-marketing", 0.8], ["/services/email-marketing", 0.8], ["/services/marketing-automation", 0.8],
+  ["/services/conversion-optimization", 0.8], ["/services/analytics-reporting", 0.8], ["/services/web-design-development", 0.8],
+  ["/services/video-marketing", 0.75], ["/services/mobile-marketing", 0.75], ["/services/ai-marketing-strategy", 0.75],
   ["/about", 0.6], ["/contact", 0.6], ["/careers", 0.4],
   ["/privacy-policy", 0.2], ["/terms-of-service", 0.2], ["/cookie-policy", 0.2], ["/data-processing", 0.2],
 ];

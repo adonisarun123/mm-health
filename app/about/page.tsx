@@ -3,23 +3,23 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About Monk Mantra",
-  description: "Monk Mantra is a marketing and engineering team that works only in healthcare. How we started, how we work, and what you can hold us to.",
+  description: "Monk Mantra is a marketing and engineering team working across ten sectors, deepest in healthcare. How we started, how we work, and what you can hold us to.",
   alternates: { canonical: "/about" },
 };
 
 const PATH = [
   { title: "Search first", body: "Founded around technical SEO and organic growth, not reselling paid media." },
   { title: "Performance added", body: "Paid search and social brought in-house, so channels could be planned together." },
-  { title: "Healthcare focus", body: "Specialised in compliant patient acquisition for doctors, clinics and hospitals." },
+  { title: "Healthcare depth", body: "Built a dedicated practice for compliant patient acquisition for doctors, clinics and hospitals, alongside our other sectors." },
   { title: "Engineering added", body: "We started building software after too many campaigns died at the front desk." },
-  { title: "One team, both halves", body: "Demand, the front desk on MedDeskOS, and reporting in patients who turned up." },
+  { title: "One team, both halves", body: "Demand, conversion and reporting in customers, and for clinics, the front desk on MedDeskOS." },
 ];
 
 const COMMITMENTS = [
   { title: "Findings in writing, before you commit", body: "You keep the audit whether or not you hire us." },
   { title: "Fixed price and date on software builds", body: "Changes are quoted before they are built, never after." },
   { title: "Your code, your data, your accounts", body: "Nothing is held hostage if you leave." },
-  { title: "We will say no when a tactic isn't worth the risk", body: "Everything is written to the MCI code, the DMR Act, CCPA guidelines and the DPDP Act." },
+  { title: "We will say no when a tactic isn't worth the risk", body: "Everything is written to the rules of your sector: CCPA guidelines and the DPDP Act everywhere, plus the MCI code, RERA, SEBI and others where they apply." },
 ];
 
 export default function About() {
@@ -28,10 +28,10 @@ export default function About() {
       <section className="grain relative overflow-hidden pb-20 pt-32 lg:pb-28 lg:pt-44">
         <div aria-hidden="true" className="wash pointer-events-none absolute inset-0" />
         <div className="relative mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10">
-          <h1 className="display max-w-[16ch] text-5xl sm:text-7xl">A marketing and engineering team that only works in healthcare.</h1>
+          <h1 className="display max-w-[16ch] text-5xl sm:text-7xl">A marketing and engineering team, deepest in healthcare.</h1>
           <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-16">
             <p className="text-xl leading-relaxed text-paper">
-              Monk Mantra helps doctors, clinics and hospitals in India get found, turn enquiries into attended appointments, and see what each patient cost to reach.
+              Monk Mantra helps Indian businesses get found, turn enquiries into customers, and see what each one cost to reach. In healthcare, our largest practice, that means attended appointments for doctors, clinics and hospitals.
             </p>
             <p className="text-lg leading-relaxed text-muted">
               We are based in Bengaluru and led by Arun Mahendran, who has worked in search for more than twenty years. Over the last eighteen months we have worked with more than 45 doctors, from solo consultants to multi-speciality hospitals.

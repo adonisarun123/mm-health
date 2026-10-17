@@ -278,7 +278,7 @@ const data: ContentPageData = {
     {
       question: "Do you only work with healthcare clients?",
       answer:
-        "Yes. We work only with doctors, clinics, hospitals and diagnostic centres. The compliance constraints and the gap between enquiry and attended appointment reward specialisation, so that is all we do.",
+        "No. Monk Mantra also works with D2C, ecommerce, SaaS, hospitality, real estate and other sectors. Healthcare is where we go deepest because the compliance constraints and the software gap reward specialisation, but the performance discipline is the same across sectors.",
     },
   ],
 

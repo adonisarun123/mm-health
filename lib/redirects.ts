@@ -1,6 +1,6 @@
 /**
- * 301 map from the old monkmantra.com (general agency) to the healthcare-only site.
- * Healthcare URLs keep their paths, so they are not listed here.
+ * 301 map from the old monkmantra.com for pages that did not come back.
+ * Healthcare, /industries/* and /services/* keep their paths, so they are not listed here.
  */
 type R = { source: string; destination: string; permanent: true };
 const r = (source: string, destination: string): R => ({ source, destination, permanent: true });
@@ -17,22 +17,6 @@ export const KEPT_POSTS = [
 ];
 
 export const REDIRECTS: R[] = [
-  // Generic services → nearest healthcare page
-  r("/services", "/healthcare-marketing"),
-  r("/services/seo-organic-growth", "/healthcare-marketing/seo-for-doctors"),
-  r("/services/content-marketing", "/healthcare-marketing/seo-for-doctors"),
-  r("/services/ppc-management", "/healthcare-marketing/google-ads-for-doctors"),
-  r("/services/social-media-marketing", "/healthcare-marketing"),
-  r("/services/email-marketing", "/custom-tools/patient-crm"),
-  r("/services/marketing-automation", "/custom-tools/whatsapp-automation-for-clinics"),
-  r("/services/conversion-optimization", "/healthcare-marketing/patient-acquisition"),
-  r("/services/analytics-reporting", "/healthcare-marketing/patient-acquisition"),
-  r("/services/web-design-development", "/healthcare-marketing"),
-  r("/services/:slug*", "/healthcare-marketing"),
-  // Industries
-  r("/industries/healthcare", "/healthcare-marketing"),
-  r("/industries", "/"),
-  r("/industries/:slug*", "/"),
   // Resources that are not coming back
   r("/marketing-calculator", "/"),
   r("/free-templates", "/blog"),

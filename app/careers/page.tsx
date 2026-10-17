@@ -18,7 +18,7 @@ export default function Careers() {
   return (
     <>
       <section className="mx-auto max-w-[1320px] px-4 pb-16 pt-32 sm:px-6 lg:px-10 lg:pt-44">
-        <h1 className="display max-w-[16ch] text-5xl sm:text-7xl">We hire slowly, and only for healthcare.</h1>
+        <h1 className="display max-w-[16ch] text-5xl sm:text-7xl">We hire slowly, and for depth.</h1>
         <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted">
           We don&apos;t list roles we aren&apos;t actively filling. These are the people we look for when we do. If one sounds like you, send us your work anyway.
         </p>

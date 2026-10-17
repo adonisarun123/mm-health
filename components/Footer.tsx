@@ -3,7 +3,23 @@ import { SITE } from "@/lib/site";
 
 const COLS = [
   {
-    title: "Get found",
+    title: "Industries",
+    links: [
+      ["Healthcare providers", "/healthcare-marketing"],
+      ["Healthcare brands", "/industries/healthcare"],
+      ["E-commerce and D2C", "/industries/ecommerce"],
+      ["SaaS and technology", "/industries/saas"],
+      ["Hospitality and travel", "/industries/hospitality"],
+      ["Real estate", "/industries/real-estate"],
+      ["Education", "/industries/education"],
+      ["Financial services", "/industries/financial"],
+      ["Professional services", "/industries/professional-services"],
+      ["Manufacturing and B2B", "/industries/manufacturing"],
+      ["Nonprofit", "/industries/nonprofit"],
+    ],
+  },
+  {
+    title: "Healthcare",
     links: [
       ["Marketing for doctors", "/healthcare-marketing/doctors"],
       ["Marketing for clinics", "/healthcare-marketing/clinics"],
@@ -27,6 +43,8 @@ const COLS = [
   {
     title: "Measure",
     links: [
+      ["All services", "/services"],
+      ["Analytics and reporting", "/services/analytics-reporting"],
       ["Patient acquisition economics", "/healthcare-marketing/patient-acquisition"],
       ["How we measure results", "/case-studies"],
       ["Revenue leak estimator", "/#estimator"],
@@ -50,7 +68,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.2fr_2fr]">
           <div className="max-w-sm">
             <p className="text-lg leading-snug text-paper">
-              The marketing and software team for doctors, clinics and hospitals. We get you found, run your front desk, and report in patients who actually walked in.
+              A performance marketing and software team for Indian businesses, deepest in healthcare. We get you found, fix what happens after the enquiry, and report in customers, not clicks.
             </p>
             <div className="mt-6 text-muted">
               <a className="flex min-h-11 items-center hover:text-paper" href={`mailto:${SITE.email}`}>{SITE.email}</a>

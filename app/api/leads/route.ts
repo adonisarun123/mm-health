@@ -7,7 +7,7 @@ const Lead = z.object({
   phone: z.string().trim().min(7).max(30),
   practice: z.string().trim().min(2).max(200),
   email: z.union([z.literal(""), z.email()]).optional(),
-  practiceType: z.enum(["doctor", "clinic", "hospital"]).default("clinic"),
+  practiceType: z.enum(["doctor", "clinic", "hospital", "other"]).default("clinic"),
   message: z.string().trim().max(2000).optional(),
   source: z.string().max(60).optional(),
   company: z.string().optional(), // honeypot

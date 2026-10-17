@@ -19,19 +19,19 @@ const bricolage = Bricolage_Grotesque({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Monk Mantra | Marketing technology for doctors, clinics and hospitals",
+    default: "Monk Mantra | Performance marketing and growth technology, deepest in healthcare",
     template: "%s | Monk Mantra",
   },
   description:
-    "Monk Mantra is the marketing and software team for healthcare in India. We get practices found, run the front desk on MedDeskOS, and report in attended patients, inside medical advertising rules.",
+    "Monk Mantra is a Bengaluru marketing and software team for Indian businesses across ten sectors, with healthcare as our deepest specialisation. SEO, paid media, content and conversion, reported in customers rather than clicks.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: SITE.name,
     url: SITE.url,
-    title: "Monk Mantra | Marketing technology for healthcare",
+    title: "Monk Mantra | Performance marketing, deepest in healthcare",
     description:
-      "Get found, convert enquiries into attended appointments, and measure cost per seated patient. Built for doctors, clinics and hospitals.",
+      "Get found, turn enquiries into customers, and measure what each one cost. Ten sectors, with a dedicated healthcare practice and MedDeskOS for clinics.",
   },
   twitter: { card: "summary_large_image", site: "@mantra_monk" },
   robots: { index: true, follow: true },
@@ -49,7 +49,7 @@ const orgSchema = {
   telephone: SITE.phone,
   areaServed: "IN",
   address: { "@type": "PostalAddress", addressLocality: "Bengaluru", addressRegion: "Karnataka", addressCountry: "IN" },
-  description: "Marketing technology for doctors, clinics and hospitals: search, ads, reputation, MedDeskOS and custom front-desk software.",
+  description: "Performance marketing and growth technology for Indian businesses, deepest in healthcare: search, ads, content, conversion, MedDeskOS and custom software.",
   sameAs: Object.values(SITE.social),
 };
 

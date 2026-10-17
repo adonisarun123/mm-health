@@ -33,7 +33,7 @@ export function LeadForm({ source = "website" }: { source?: string }) {
     return (
       <div className="rounded-2xl border border-gold/50 bg-gold/10 p-8" role="status">
         <p className="display text-2xl">Request received.</p>
-        <p className="mt-3 text-muted">A strategist will look at your practice and reply within one working day with your audit or a time to talk.</p>
+        <p className="mt-3 text-muted">A strategist will look at your business and reply within one working day with your audit or a time to talk.</p>
       </div>
     );
   }
@@ -52,13 +52,13 @@ export function LeadForm({ source = "website" }: { source?: string }) {
         <input name="phone" required type="tel" autoComplete="tel" inputMode="tel" className={field} />
       </label>
       <label className="block sm:col-span-2">
-        <span className="mb-1.5 block text-sm text-muted">Practice name or website</span>
-        <input name="practice" required className={field} placeholder="e.g. Sunrise Children's Clinic, Jayanagar" />
+        <span className="mb-1.5 block text-sm text-muted">Business, practice or website</span>
+        <input name="practice" required className={field} placeholder="e.g. Sunrise Children's Clinic, or yourbrand.in" />
       </label>
       <details className="group sm:col-span-2">
         <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 text-sm text-paper [&::-webkit-details-marker]:hidden">
           <span aria-hidden="true" className="grid size-6 place-items-center rounded-full border border-line transition-transform group-open:rotate-45">+</span>
-          Add email, practice type or a note (optional)
+          Add email, business type or a note (optional)
         </summary>
         <div className="mt-3 grid gap-4 sm:grid-cols-2">
           <label className="block">
@@ -67,10 +67,11 @@ export function LeadForm({ source = "website" }: { source?: string }) {
           </label>
           <label className="block">
             <span className="mb-1.5 block text-sm text-muted">You are</span>
-            <select name="practiceType" className={field} defaultValue="clinic">
+            <select name="practiceType" className={field} defaultValue={/^\/(services|industries\/(?!healthcare))/.test(source) ? "other" : "clinic"}>
               <option value="doctor">An individual doctor</option>
               <option value="clinic">A clinic</option>
               <option value="hospital">A hospital or group</option>
+              <option value="other">A business in another sector</option>
             </select>
           </label>
           <label className="block sm:col-span-2">

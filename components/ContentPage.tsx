@@ -22,7 +22,7 @@ function buildSchema(d: ContentPageData) {
       "@context": "https://schema.org", "@type": "SoftwareApplication", name, description, url: abs(d.path),
       applicationCategory: s.applicationCategory || "BusinessApplication", operatingSystem: "Web-based",
       provider: ORG, offers: { "@type": "Offer", price: s.offersFrom || "0", priceCurrency: s.offersCurrency || "INR", url: abs(d.path) },
-      audience: { "@type": "Audience", audienceType: s.audienceType || "Doctors, clinics and hospitals" },
+      audience: { "@type": "Audience", audienceType: s.audienceType || (d.path.startsWith("/healthcare") || d.path.startsWith("/custom-tools") ? "Doctors, clinics and hospitals" : "Businesses in India") },
     });
   } else if (s.type === "CollectionPage") {
     out.push({ "@context": "https://schema.org", "@type": "CollectionPage", name, description, url: abs(d.path), about: ORG });
@@ -30,7 +30,7 @@ function buildSchema(d: ContentPageData) {
     out.push({
       "@context": "https://schema.org", "@type": "Service", name, description, url: abs(d.path), provider: ORG,
       serviceType: s.serviceType || name, areaServed: (s.areaServed || ["India"]).map((a) => ({ "@type": "Place", name: a })),
-      audience: { "@type": "Audience", audienceType: s.audienceType || "Doctors, clinics and hospitals" },
+      audience: { "@type": "Audience", audienceType: s.audienceType || (d.path.startsWith("/healthcare") || d.path.startsWith("/custom-tools") ? "Doctors, clinics and hospitals" : "Businesses in India") },
     });
   }
   out.push({
