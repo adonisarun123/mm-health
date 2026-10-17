@@ -6,26 +6,26 @@ import { ConvertPanel, FoundPanel, MeasurePanel } from "./StagePanels";
 const STAGES = [
   {
     name: "Get found",
-    title: "Be the practice a patient finds first",
-    body: "Most near-me clicks go to the map pack. We rank your Google Business Profile across your real catchment, write condition pages your doctors review, and structure them so AI answers cite you.",
-    items: ["Local SEO and Google Business Profile", "SEO for doctors and clinics", "Google Ads that survive policy", "Reviews without gating"],
-    href: "/healthcare-marketing",
+    title: "Be the business a buyer finds first",
+    body: "Search, maps, ads and AI answers decide who gets the enquiry. We build the pages, profiles and campaigns that put you there, written to your sector's advertising rules. For a clinic, that means the map pack across your real catchment and condition pages your doctors review.",
+    items: ["SEO and local search", "Google and Meta ads", "Content that AI answers cite", "Reviews and reputation"],
+    href: "/services/seo-organic-growth",
     Panel: FoundPanel,
   },
   {
     name: "Convert",
-    title: "Turn enquiries into people in the chair",
-    body: "This is where most growth is lost. Bookings land in MedDeskOS with their source attached, and our WhatsApp automation confirms, reminds, reschedules and recovers missed calls. When something doesn't fit, our engineers build what does.",
-    items: ["MedDeskOS: queue, EMR, billing", "WhatsApp confirmations and reminders", "Booking built to your slot rules", "Patient CRM and recall"],
-    href: "/platform",
+    title: "Turn enquiries into customers",
+    body: "This is where most growth is lost: the missed call, the slow reply, the form nobody followed up. We fix the site, the follow-up and the handover to sales. In healthcare, bookings land in MedDeskOS with their source attached, and WhatsApp confirms, reminds and recovers missed calls.",
+    items: ["Conversion optimisation", "WhatsApp and email automation", "CRM and lead routing", "MedDeskOS for clinics"],
+    href: "/services/conversion-optimization",
     Panel: ConvertPanel,
   },
   {
     name: "Measure",
-    title: "Report in patients, not impressions",
-    body: "We join marketing to the appointments that actually happened. You see cost per attended patient by source, by doctor and by branch, so budget goes where patients come from.",
-    items: ["GA4 and call tracking done properly", "Cost per attended patient", "Branch and department dashboards", "Lost-enquiry reports"],
-    href: "/healthcare-marketing/patient-acquisition",
+    title: "Report in customers, not impressions",
+    body: "We join marketing to the sales, bookings or visits that actually happened, so budget goes where customers come from. For a clinic, that is cost per attended patient by source, doctor and branch.",
+    items: ["GA4 and call tracking done properly", "Cost per customer by source", "Branch and channel dashboards", "Lost-enquiry reports"],
+    href: "/services/analytics-reporting",
     Panel: MeasurePanel,
   },
 ] as const;
@@ -52,10 +52,10 @@ export function Stages() {
   return (
     <section aria-labelledby="stages-h" className="relative mx-auto max-w-[1320px] px-4 pb-16 pt-4 sm:px-6 lg:px-10 lg:pb-24 lg:pt-8">
       <h2 id="stages-h" className="display max-w-4xl text-4xl sm:text-6xl">
-        One team from search result to seated patient.
+        One team from search result to paying customer.
       </h2>
       <p className="mt-6 max-w-2xl text-lg text-muted">
-        Most agencies stop at the enquiry. In a clinic the enquiry is the easy part, so we run all three stages on one stack.
+        Most agencies stop at the enquiry. The enquiry is usually the easy part, so we run all three stages as one system. The panels show a worked example from a clinic, our deepest sector.
       </p>
 
       <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
@@ -87,6 +87,7 @@ export function Stages() {
                   How {s.name.toLowerCase()} works <span aria-hidden="true">→</span>
                 </Link>
                 <div className="mt-10 lg:hidden">
+                  <p className="mb-3 text-sm text-muted">Worked example: a paediatric clinic</p>
                   <P />
                 </div>
               </div>
@@ -95,6 +96,7 @@ export function Stages() {
         </div>
         <div className="hidden lg:block">
           <div className="sticky top-28">
+            <p className="mb-3 text-sm text-muted">Worked example: a paediatric clinic</p>
             <ActivePanel key={active} />
           </div>
         </div>

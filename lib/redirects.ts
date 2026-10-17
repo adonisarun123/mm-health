@@ -26,18 +26,21 @@ export const REDIRECTS: R[] = [
   r("/resources", "/blog"),
   r("/partnership", "/contact"),
   r("/api-documentation", "/"),
-  // Blog categories collapse into the blog index
-  r("/blog/category/healthcare-marketing", "/blog"),
-  r("/blog/category/:slug*", "/blog"),
+  // Old blog categories with no direct successor (healthcare-marketing and travel-hospitality-marketing are live)
+  ...["ai-marketing", "analytics", "content-marketing", "cro", "email-marketing", "ppc-marketing", "seo", "social-media"].map((c) => r(`/blog/category/${c}`, "/blog/category/growth-strategy")),
 ];
 
 /**
- * Old posts deliberately not republished (unsubstantiated performance claims about Monk Mantra
- * and third parties). Everything else from the old blog is live again at its original slug.
+ * Old posts deliberately not republished: unsubstantiated performance claims about Monk Mantra
+ * and third parties, or duplicate body text. Everything else from the old blog is live again at its original slug.
  */
 export const RETIRED_POSTS: R[] = [
   r("/blog/ai-powered-marketing-guide-2024", "/services/ai-marketing-strategy"),
   r("/blog/top-health-and-wellness-seo-experts-to-boost-your-website-traffic", "/industries/healthcare"),
+  // Duplicates of other live posts (same body text); 301 to the copy whose title matches the content
+  r("/blog/maneuvers-to-drive-your-account-based-marketing-process-2", "/blog/maneuvers-to-drive-your-account-based-marketing-process"),
+  r("/blog/digital-strategies-making-your-vacation-stays-truly-stand-out", "/blog/online-success-homestays-digital-marketing"),
+  r("/blog/promote-your-wellness-brand-on-instagram-for-more-leads", "/blog/drive-more-leads-for-your-wellness-business-with-facebook-ads"),
 ];
 
 export const ALL_REDIRECTS: R[] = [...REDIRECTS, ...RETIRED_POSTS];

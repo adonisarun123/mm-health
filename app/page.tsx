@@ -84,7 +84,7 @@ export default function Home() {
           <span className="text-muted">Customers don&apos;t disappear at the search.</span> They disappear at the missed call after seven, the enquiry nobody followed up, and the competitor who answered first. In a clinic, that is a patient who went four hundred metres down the road.
         </p>
         <p className="mt-8 max-w-2xl text-lg text-muted">
-          So we treat growth as one system: demand, front desk and measurement, run by a single team on one stack.
+          So we treat growth as one system: demand, conversion and measurement, run by a single team.
         </p>
       </section>
 

@@ -10,7 +10,7 @@ import { useEffect, useRef, useState } from "react";
 const GATES = [
   { x: 0.3, label: "Found in search" },
   { x: 0.56, label: "Enquiry answered" },
-  { x: 0.8, label: "Turned up" },
+  { x: 0.8, label: "Became a customer" },
 ] as const;
 
 // Leak probability at each gate. "today" mirrors the estimator's assumptions.
@@ -155,7 +155,7 @@ export function PatientFlow() {
         ))}
       </div>
       <div className="mt-4 flex flex-wrap items-end justify-between gap-4 border-t border-line pt-5">
-        <div role="radiogroup" aria-label="Practice state" className="inline-flex rounded-full border border-line bg-white p-1 text-sm">
+        <div role="radiogroup" aria-label="Business state" className="inline-flex rounded-full border border-line bg-white p-1 text-sm">
           {(["today", "closed"] as Mode[]).map((m) => (
             <button
               key={m}
@@ -164,13 +164,13 @@ export function PatientFlow() {
               onClick={() => setMode(m)}
               className={`min-h-11 rounded-full px-4 transition-colors ${mode === m ? "bg-paper text-ink" : "text-muted hover:text-paper"}`}
             >
-              {m === "today" ? "A typical practice" : "Leaks closed"}
+              {m === "today" ? "A typical business" : "Leaks closed"}
             </button>
           ))}
         </div>
         <p className="text-right text-sm text-muted" aria-live="polite">
           <span className="display-condensed mr-2 align-[-0.1em] text-4xl text-gold tabular-nums">{TURN_UP[mode]}</span>
-          of every 100 enquiries turn up
+          of every 100 enquiries become customers
           <span className="mt-1 block text-sm font-medium text-paper">Illustration, not a client result</span>
         </p>
       </div>
