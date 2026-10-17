@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { LeadForm } from "@/components/LeadForm";
-import { NEXT_STEP, fmtDate, getPost, getPosts } from "@/lib/posts";
+import { fmtDate, getPost, getPosts, nextStepFor } from "@/lib/posts";
 import { SITE } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
   const p = getPost((await params).slug);
   if (!p) notFound();
-  const next = NEXT_STEP[p.slug];
+  const next = nextStepFor(p);
   const more = getPosts().filter((x) => x.slug !== p.slug).slice(0, 3);
   const schema = {
     "@context": "https://schema.org",
@@ -51,7 +51,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             <div className="post-body" dangerouslySetInnerHTML={{ __html: p.html }} />
             {next && (
               <aside className="self-start rounded-3xl border border-line bg-ink-2 p-7 lg:sticky lg:top-28">
-                <p className="text-sm text-muted">Want this done for your practice?</p>
+                <p className="text-sm text-muted">{p.category && !/health/i.test(p.category) ? "Want this done for your business?" : "Want this done for your practice?"}</p>
                 <Link href={next.href} className="mt-3 block text-xl font-semibold text-paper hover:text-gold">{next.title}</Link>
                 <Link href="/get-started" className="mt-6 inline-block rounded-full bg-paper px-5 py-2.5 text-sm font-semibold text-ink">Get a free audit</Link>
               </aside>
@@ -81,8 +81,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <section className="border-t border-line bg-ink-2">
         <div className="mx-auto grid max-w-[1320px] gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:gap-20 lg:px-10">
           <div>
-            <h2 className="display text-4xl sm:text-5xl">Find the patients you are already losing.</h2>
-            <p className="mt-6 max-w-md text-lg text-muted">A written audit of your local visibility, ad waste and booking friction. Free, with no obligation.</p>
+            <h2 className="display text-4xl sm:text-5xl">{p.category && !/health/i.test(p.category) ? "Find the customers you are already losing." : "Find the patients you are already losing."}</h2>
+            <p className="mt-6 max-w-md text-lg text-muted">A written audit of your search visibility, ad waste and enquiry friction. Free, with no obligation.</p>
           </div>
           <LeadForm source={`blog:${p.slug}`} />
         </div>

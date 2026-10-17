@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-export type Post = { slug: string; title: string; excerpt: string; description: string; date: string; readMins: number; html: string };
+export type Post = { slug: string; title: string; excerpt: string; description: string; date: string; readMins: number; html: string; category?: string };
 
 const DIR = path.join(process.cwd(), "content/posts");
 
@@ -28,3 +28,13 @@ export const NEXT_STEP: Record<string, { title: string; href: string }> = {
   "leverage-linkedin-to-grow-your-healthcare-practice-in-2023": { title: "Marketing for individual doctors", href: "/healthcare-marketing/doctors" },
   "enhance-mental-health-centers-online-presence": { title: "Marketing for clinics", href: "/healthcare-marketing/clinics" },
 };
+
+/** Fallback next step for posts not listed above, by the old site's category tag. */
+export function nextStepFor(p: Post): { title: string; href: string } {
+  if (NEXT_STEP[p.slug]) return NEXT_STEP[p.slug];
+  const c = (p.category || "").toLowerCase();
+  if (c.includes("hospitality") || c.includes("travel")) return { title: "Marketing for hotels, resorts and homestays", href: "/industries/hospitality" };
+  if (c.includes("d2c") || c.includes("ecommerce")) return { title: "Marketing for D2C and ecommerce brands", href: "/industries/ecommerce" };
+  if (c.includes("health")) return { title: "Marketing for wellness and healthcare brands", href: "/industries/healthcare" };
+  return { title: "Our marketing services", href: "/services" };
+}

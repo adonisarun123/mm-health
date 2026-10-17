@@ -3,8 +3,8 @@ import Link from "next/link";
 import { fmtDate, getPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Notes on healthcare marketing",
-  description: "Practical notes on patient acquisition, local search, compliance and the front-desk tools that turn enquiries into attended appointments.",
+  title: "Notes on marketing that pays back",
+  description: "Practical notes on search, paid media, conversion and compliance, with the deepest coverage on healthcare, plus D2C, hospitality and wellness.",
   alternates: { canonical: "/blog" },
 };
 
@@ -15,7 +15,7 @@ export default function Blog() {
     <>
       <section className="mx-auto max-w-[1320px] px-4 pb-16 pt-32 sm:px-6 lg:px-10 lg:pt-44">
         <h1 className="display text-5xl sm:text-7xl">Notes</h1>
-        <p className="mt-6 max-w-xl text-lg text-muted">On patient acquisition, local search, Indian medical advertising rules and the tools that move appointments.</p>
+        <p className="mt-6 max-w-xl text-lg text-muted">On search, paid media, conversion and the rules that constrain them. Deepest on healthcare, with notes on D2C, hospitality and wellness.</p>
       </section>
 
       {lead && (
