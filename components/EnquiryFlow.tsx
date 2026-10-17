@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from "react";
 
 /**
  * The hero's one bold moment: enquiries flow left to right through three gates
- * (found, answered, attended). Red dots are patients lost at a gate; teal dots
- * reach a chair. The toggle switches leak rates between a typical practice and
+ * (found, answered, attended). Red dots are customers lost at a gate; teal dots
+ * convert. The toggle switches leak rates between a typical practice and
  * one with the gaps closed. Purely illustrative, labelled as such in the UI.
  */
 const GATES = [
@@ -19,7 +19,7 @@ type Mode = keyof typeof RATES;
 
 /**
  * The headline figure is computed from the stated rates, not counted from the random
- * simulation, so it is the same on every visit: 47 for a typical practice, 81 with leaks closed.
+ * simulation, so it is the same on every visit: 47 for a typical business, 81 with leaks closed.
  */
 const TURN_UP = Object.fromEntries(
   (Object.keys(RATES) as Mode[]).map((m) => [m, Math.round(RATES[m].reduce((s, r) => s * (1 - r), 100))])
@@ -34,7 +34,7 @@ const C = {
 
 type P = { x: number; y: number; lane: number; speed: number; gate: number; dead: boolean; vy: number; life: number };
 
-export function PatientFlow() {
+export function EnquiryFlow() {
   const ref = useRef<HTMLCanvasElement>(null);
   const modeRef = useRef<Mode>("today");
   const [mode, setMode] = useState<Mode>("today");
@@ -52,7 +52,7 @@ export function PatientFlow() {
     let onScreen = true;
 
     const laneY = (lane: number, x: number) => {
-      // lanes start spread out and converge towards the chair on the right
+      // lanes start spread out and converge towards the sale on the right
       const spread = (1 - Math.min(x / 0.9, 1)) * 0.36 + 0.04;
       return h * (0.5 + lane * spread);
     };

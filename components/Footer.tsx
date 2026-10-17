@@ -5,10 +5,9 @@ const COLS = [
   {
     title: "Industries",
     links: [
-      ["Healthcare providers", "/healthcare-marketing"],
-      ["Healthcare brands", "/industries/healthcare"],
       ["E-commerce and D2C", "/industries/ecommerce"],
       ["SaaS and technology", "/industries/saas"],
+      ["Healthcare", "/healthcare-marketing"],
       ["Hospitality and travel", "/industries/hospitality"],
       ["Real estate", "/industries/real-estate"],
       ["Education", "/industries/education"],
@@ -19,35 +18,26 @@ const COLS = [
     ],
   },
   {
-    title: "Healthcare",
+    title: "Services",
     links: [
-      ["Marketing for doctors", "/healthcare-marketing/doctors"],
-      ["Marketing for clinics", "/healthcare-marketing/clinics"],
-      ["Marketing for hospitals", "/healthcare-marketing/hospitals"],
-      ["SEO for doctors", "/healthcare-marketing/seo-for-doctors"],
-      ["Local SEO for clinics", "/healthcare-marketing/local-seo-for-clinics"],
-      ["Google Ads for doctors", "/healthcare-marketing/google-ads-for-doctors"],
-      ["Reputation management", "/healthcare-marketing/reputation-management"],
-    ],
-  },
-  {
-    title: "Front desk",
-    links: [
-      ["MedDeskOS platform", "/platform"],
-      ["Appointment booking", "/custom-tools/patient-appointment-booking-system"],
-      ["WhatsApp automation", "/custom-tools/whatsapp-automation-for-clinics"],
-      ["Patient CRM and recall", "/custom-tools/patient-crm"],
-      ["Tools for hospitals", "/custom-tools/for-hospitals"],
+      ["SEO and organic growth", "/services/seo-organic-growth"],
+      ["PPC management", "/services/ppc-management"],
+      ["Content marketing", "/services/content-marketing"],
+      ["Social media marketing", "/services/social-media-marketing"],
+      ["Conversion optimisation", "/services/conversion-optimization"],
+      ["Marketing automation", "/services/marketing-automation"],
+      ["Web design and development", "/services/web-design-development"],
+      ["All services", "/services"],
     ],
   },
   {
     title: "Measure",
     links: [
-      ["All services", "/services"],
       ["Analytics and reporting", "/services/analytics-reporting"],
-      ["Patient acquisition economics", "/healthcare-marketing/patient-acquisition"],
+      ["AI marketing strategy", "/services/ai-marketing-strategy"],
       ["How we measure results", "/case-studies"],
       ["Revenue leak estimator", "/#estimator"],
+      ["Free growth audit", "/get-started"],
     ],
   },
   {
@@ -68,7 +58,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.2fr_2fr]">
           <div className="max-w-sm">
             <p className="text-lg leading-snug text-paper">
-              A performance marketing and software team for Indian businesses, deepest in healthcare. We get you found, fix what happens after the enquiry, and report in customers, not clicks.
+              A performance marketing and software team for Indian businesses. We get you found, fix what happens after the enquiry, and report in customers, not clicks.
             </p>
             <div className="mt-6 text-muted">
               <a className="flex min-h-11 items-center hover:text-paper" href={`mailto:${SITE.email}`}>{SITE.email}</a>

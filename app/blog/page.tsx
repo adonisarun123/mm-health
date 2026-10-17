@@ -5,7 +5,7 @@ import { PostList, TopicNav } from "@/components/PostList";
 
 export const metadata: Metadata = {
   title: "Notes on marketing that pays back",
-  description: "Practical notes on search, paid media, conversion and compliance, with the deepest coverage on healthcare, plus D2C, hospitality and wellness.",
+  description: "Practical notes on search, paid media, conversion and compliance across D2C, SaaS, hospitality, healthcare, property and the other sectors we work in.",
   alternates: { canonical: "/blog" },
 };
 
@@ -16,7 +16,7 @@ export default function Blog() {
     <>
       <section className="mx-auto max-w-[1320px] px-4 pb-16 pt-32 sm:px-6 lg:px-10 lg:pt-44">
         <h1 className="display text-5xl sm:text-7xl">Notes</h1>
-        <p className="mt-6 max-w-xl text-lg text-muted">On search, paid media, conversion and the rules that constrain them. Deepest on healthcare, with notes on D2C, hospitality and wellness.</p>
+        <p className="mt-6 max-w-xl text-lg text-muted">On search, paid media, conversion and the rules that constrain them. Notes from every sector we work in.</p>
         <TopicNav posts={posts} />
       </section>
 

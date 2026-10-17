@@ -5,9 +5,9 @@ import { useMemo, useState } from "react";
 const A = { unanswered: 0.25, bookRate: 0.5, noShow: 0.22, localGap: 0.2 };
 
 const TYPES = {
-  doctor: { label: "Individual doctor", enquiries: 90, value: 1500 },
-  clinic: { label: "Clinic", enquiries: 180, value: 2500 },
-  hospital: { label: "Hospital", enquiries: 900, value: 6000 },
+  local: { label: "Local business", enquiries: 180, value: 3000 },
+  services: { label: "Services or B2B firm", enquiries: 60, value: 40000 },
+  multi: { label: "Multi-location brand", enquiries: 900, value: 6000 },
 } as const;
 type T = keyof typeof TYPES;
 
@@ -69,20 +69,20 @@ function NumberControl({
 }
 
 export function LeakEstimator() {
-  const [type, setType] = useState<T>("clinic");
-  const [enq, setEnq] = useState<number>(TYPES.clinic.enquiries);
-  const [val, setVal] = useState<number>(TYPES.clinic.value);
+  const [type, setType] = useState<T>("local");
+  const [enq, setEnq] = useState<number>(TYPES.local.enquiries);
+  const [val, setVal] = useState<number>(TYPES.local.value);
 
   const r = useMemo(() => {
     const unanswered = enq * A.unanswered;
     const booked = (enq - unanswered) * A.bookRate;
     const noShow = booked * A.noShow;
     const local = enq * A.localGap * A.bookRate;
-    // n is always patients (not enquiries), so n × treatment value = the rupee figure shown.
+    // n is always customers (not enquiries), so n × sale value = the rupee figure shown.
     const rows = [
       { k: "Enquiries never answered", n: unanswered * A.bookRate, note: `${Math.round(unanswered)} unanswered enquiries, about` },
-      { k: "Booked but did not attend", n: noShow, note: "About" },
-      { k: "Nearby demand not captured", n: local, note: "About" },
+      { k: "Booked or quoted, then went cold", n: noShow, note: "About" },
+      { k: "Search demand not captured", n: local, note: "About" },
     ].map((x) => ({ ...x, v: x.n * val }));
     const total = rows.reduce((s, x) => s + x.v, 0);
     return { rows, low: total * 0.6, high: total * 1.15, max: Math.max(...rows.map((x) => x.v)) };
@@ -98,11 +98,11 @@ export function LeakEstimator() {
     <section id="estimator" aria-labelledby="est-h" className="scroll-mt-24 border-y border-line bg-ink-2">
       <div className="mx-auto grid max-w-[1320px] gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:px-10 lg:py-32">
         <div>
-          <h2 id="est-h" className="display text-4xl sm:text-5xl">What is your practice losing each month?</h2>
+          <h2 id="est-h" className="display text-4xl sm:text-5xl">What is your business losing each month?</h2>
           <p className="mt-6 max-w-lg text-lg text-muted">Three inputs. No email required. An estimate, not a measurement; the free audit measures yours.</p>
 
           <fieldset className="mt-10">
-            <legend className="text-sm text-muted">Practice type</legend>
+            <legend className="text-sm text-muted">Business type</legend>
             <div className="mt-3 flex flex-wrap gap-2">
               {(Object.keys(TYPES) as T[]).map((t) => (
                 <button
@@ -119,7 +119,7 @@ export function LeakEstimator() {
           </fieldset>
 
           <NumberControl id="est-enq" label="Monthly enquiries" value={enq} onChange={setEnq} range={ENQ} />
-          <NumberControl id="est-val" label="Average treatment value" value={val} onChange={setVal} range={VAL} prefix="₹" />
+          <NumberControl id="est-val" label="Average sale value" value={val} onChange={setVal} range={VAL} prefix="₹" />
         </div>
 
         <div className="card p-6 sm:p-10" aria-live="polite">
@@ -137,12 +137,12 @@ export function LeakEstimator() {
                 <div className="mt-2 h-1.5 rounded-full bg-ink-3">
                   <div className="h-1.5 rounded-full bg-leak transition-[width] duration-500" style={{ width: `${(x.v / r.max) * 100}%` }} />
                 </div>
-                <p className="mt-1.5 text-sm text-muted">{x.note} {Math.round(x.n)} patients a month</p>
+                <p className="mt-1.5 text-sm text-muted">{x.note} {Math.round(x.n)} customers a month</p>
               </li>
             ))}
           </ul>
           <p className="mt-8 text-sm leading-relaxed text-muted">
-            Assumes a quarter of first contacts go unanswered, about half of answered enquiries book, a 22% no-show rate and a 20% local search gap, figures typical of Indian outpatient settings. Yours will differ.
+            Assumes a quarter of first contacts go unanswered, about half of answered enquiries book or ask for a quote, 22% of those go cold before the sale and a 20% search visibility gap, figures typical of Indian enquiry-led businesses. Yours will differ.
           </p>
           <a href="#audit" className="mt-8 inline-flex min-h-11 items-center rounded-full bg-paper px-6 font-semibold text-ink hover:-translate-y-px">
             Measure my real numbers

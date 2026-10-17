@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     "digital marketing agency Bengaluru",
     "SEO PPC content agency",
     "performance marketing services",
-    "marketing agency for healthcare",
   ],
   alternates: { canonical: "/services" },
   openGraph: {
@@ -45,10 +44,9 @@ const data: ContentPageData = {
   secondaryCta: { label: "Browse by industry", href: "/industries" },
 
   keyFacts: [
-    { label: "Where we specialise deepest", value: "Healthcare — doctors, clinics and hospitals" },
-    { label: "Other sectors", value: "D2C and ecommerce, SaaS, hospitality, real estate, education, financial, manufacturing, nonprofit" },
+    { label: "Sectors", value: "D2C and ecommerce, SaaS, healthcare, hospitality, real estate, education, financial, professional services, manufacturing, nonprofit" },
     { label: "Engagement shape", value: "Marketing on a flat monthly retainer; software on fixed-price scopes" },
-    { label: "Starting from", value: "₹12,000 per month, scaling with scope and sector" },
+    { label: "Starting from", value: "₹10,000 per month, scaling with scope and sector" },
     { label: "Minimum commitment", value: "Three months on marketing retainers, then month to month" },
     { label: "Based in", value: "Bengaluru, working with clients across India, UAE, UK and US" },
   ],
@@ -287,12 +285,12 @@ const data: ContentPageData = {
     {
       question: "What does a retainer typically cost?",
       answer:
-        "Marketing retainers start from about ₹12,000 per month and scale with scope, sector and how much production is included. An individual consultant sits at the lower end, a multi-location group or a hospital service line programme at the higher. Custom software is quoted separately as a fixed-price build, starting from about ₹15,000 for a single tool. We scope against what your business can actually service rather than selling a package.",
+        "Marketing retainers start from ₹10,000 per month and scale with scope, sector and how much production is included. A single-location business sits at the lower end, a multi-location brand or a national programme at the higher. Custom software is quoted separately as a fixed-price build, starting from about ₹15,000 for a single tool. We scope against what your business can actually service rather than selling a package.",
     },
     {
-      question: "Do you work with businesses outside healthcare?",
+      question: "Which sectors do you work in?",
       answer:
-        "Yes. Healthcare is where we specialise deepest, because the compliance constraints and the software gap reward specialisation, but the same search and performance discipline applies across D2C and ecommerce, SaaS, hospitality, real estate, education, financial services, manufacturing, professional services and nonprofits. Each of those has an industry page setting out how the work differs in that sector.",
+        "Ten: D2C and ecommerce, SaaS, healthcare, hospitality, real estate, education, financial services, manufacturing, professional services and nonprofits. The same search and performance discipline runs through all of them; what changes is what a customer is worth and what you are allowed to say. Each of those has an industry page setting out how the work differs in that sector.",
     },
     {
       question: "What is the minimum commitment?",
@@ -309,8 +307,7 @@ const data: ContentPageData = {
   related: {
     title: "Where to go next",
     items: [
-      { title: "Healthcare marketing", href: "/healthcare-marketing", body: "Our deepest specialisation — doctors, clinics and hospitals." },
-      { title: "Custom tools", href: "/custom-tools", body: "Booking, reminders, CRM and dashboards built in weeks." },
+      { title: "Marketing automation", href: "/services/marketing-automation", body: "Booking, reminders, CRM and follow-up built in weeks." },
       { title: "Industries", href: "/industries", body: "How the work differs sector by sector." },
       { title: "How we measure results", href: "/case-studies", body: "Our reporting method, stated plainly." },
       { title: "Contact", href: "/contact", body: "Costs, contracts, ownership and escalation, answered." },

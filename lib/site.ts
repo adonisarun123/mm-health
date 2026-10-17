@@ -22,6 +22,8 @@ export const SITE = {
  * House rule: lead with an entry point ("from ₹X"), never a range.
  */
 export const PRICE = {
+  /** Entry retainer for any sector. */
+  base: "₹10,000",
   doctor: "₹12,000",
   clinic: "₹18,000",
   hospital: "₹45,000",
@@ -36,10 +38,10 @@ export const PRICE = {
 } as const;
 
 export const NAV = [
-  { label: "Healthcare", href: "/healthcare-marketing" },
-  { label: "Industries", href: "/industries" },
   { label: "Services", href: "/services" },
-  { label: "MedDeskOS", href: "/platform" },
+  { label: "Industries", href: "/industries" },
+  { label: "How we measure", href: "/case-studies" },
   { label: "Notes", href: "/blog" },
   { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ] as const;

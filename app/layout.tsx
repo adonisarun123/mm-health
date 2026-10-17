@@ -19,19 +19,19 @@ const bricolage = Bricolage_Grotesque({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Monk Mantra | Performance marketing and growth technology, deepest in healthcare",
+    default: "Monk Mantra | Performance marketing and growth technology",
     template: "%s | Monk Mantra",
   },
   description:
-    "Monk Mantra is a Bengaluru marketing and software team for Indian businesses across ten sectors, with healthcare as our deepest specialisation. SEO, paid media, content and conversion, reported in customers rather than clicks.",
+    "Monk Mantra is a Bengaluru marketing and software team for Indian businesses across ten sectors. SEO, paid media, content, conversion and custom tools, reported in customers rather than clicks.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: SITE.name,
     url: SITE.url,
-    title: "Monk Mantra | Performance marketing, deepest in healthcare",
+    title: "Monk Mantra | Performance marketing and growth technology",
     description:
-      "Get found, turn enquiries into customers, and measure what each one cost. Ten sectors, with a dedicated healthcare practice and MedDeskOS for clinics.",
+      "Get found, turn enquiries into customers, and measure what each one cost. One team for search, ads, conversion and the software behind them, across ten sectors.",
   },
   twitter: { card: "summary_large_image", site: "@mantra_monk" },
   robots: { index: true, follow: true },
@@ -49,7 +49,7 @@ const orgSchema = {
   telephone: SITE.phone,
   areaServed: "IN",
   address: { "@type": "PostalAddress", addressLocality: "Bengaluru", addressRegion: "Karnataka", addressCountry: "IN" },
-  description: "Performance marketing and growth technology for Indian businesses, deepest in healthcare: search, ads, content, conversion, MedDeskOS and custom software.",
+  description: "Performance marketing and growth technology for Indian businesses: search, ads, content, conversion, analytics and custom software.",
   sameAs: Object.values(SITE.social),
 };
 

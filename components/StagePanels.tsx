@@ -16,13 +16,13 @@ function Frame({ title, children }: { title: string; children: React.ReactNode }
 
 export function FoundPanel() {
   const rows = [
-    { name: "Your clinic", meta: "4.8 · 1.2 km · Open till 9 pm", you: true },
-    { name: "City Care Clinic", meta: "4.3 · 0.4 km · Closes 7 pm", you: false },
-    { name: "Sunrise Polyclinic", meta: "4.1 · 2.6 km · Open now", you: false },
+    { name: "Your studio", meta: "4.8 · 1.2 km · Open till 8 pm", you: true },
+    { name: "HomeCraft Interiors", meta: "4.3 · 0.4 km · Closes 7 pm", you: false },
+    { name: "Urban Nest Designs", meta: "4.1 · 2.6 km · Open now", you: false },
   ];
   return (
-    <Frame title="Google · paediatrician near me">
-      <div className="rounded-lg border border-line bg-ink px-4 py-3 text-sm text-paper">paediatrician near me</div>
+    <Frame title="Google · modular kitchen designers near me">
+      <div className="rounded-lg border border-line bg-ink px-4 py-3 text-sm text-paper">modular kitchen designers near me</div>
       <ol className="mt-4 space-y-2">
         {rows.map((r, i) => (
           <li
@@ -40,7 +40,7 @@ export function FoundPanel() {
       </ol>
       <div className="anim-rise mt-4 rounded-lg border border-line p-4 text-sm" style={{ animationDelay: "700ms" }}>
         <p className="text-xs text-muted">AI answer</p>
-        <p className="mt-1 text-paper">For a child&apos;s fever lasting more than three days, see a paediatrician. <span className="text-gold underline decoration-dotted">Your clinic</span> explains when to come in.</p>
+        <p className="mt-1 text-paper">Compare carcass material and hardware warranty before price. <span className="text-gold underline decoration-dotted">Your studio</span> publishes what a kitchen actually costs.</p>
       </div>
     </Frame>
   );
@@ -48,14 +48,14 @@ export function FoundPanel() {
 
 export function ConvertPanel() {
   const msgs = [
-    { me: false, t: "Hello Priya, your appointment is confirmed for Tue, 11:30 am. Reply 1 to confirm or 2 to pick another time." },
+    { me: false, t: "Hello Priya, your design consultation is set for Tue, 11:30 am. Reply 1 to confirm or 2 to pick another time." },
     { me: true, t: "2" },
     { me: false, t: "No problem. Open slots: Tue 4:00 pm · Wed 10:15 am · Wed 6:30 pm" },
     { me: true, t: "Wed 10:15" },
-    { me: false, t: "Done. We'll remind you the evening before and two hours before." },
+    { me: false, t: "Done. Your designer will bring layouts for your floor plan. We'll remind you the evening before." },
   ];
   return (
-    <Frame title="WhatsApp automation, booking into MedDeskOS">
+    <Frame title="WhatsApp automation, booking into your CRM">
       <div className="space-y-2.5">
         {msgs.map((m, i) => (
           <div key={i} className={`flex ${m.me ? "justify-end" : "justify-start"}`}>
@@ -84,15 +84,15 @@ export function MeasurePanel() {
     { k: "Google Business Profile", v: 0.92 },
     { k: "Organic search", v: 0.74 },
     { k: "Google Ads", v: 0.51 },
-    { k: "Referrals", v: 0.38 },
+    { k: "Instagram", v: 0.38 },
   ];
   return (
     <Frame title="Monthly report · sample data">
       <div className="grid grid-cols-3 gap-3">
         {[
           ["Enquiries", "412"],
-          ["Attended", "268"],
-          ["Cost / attended", "₹310"],
+          ["Visits", "168"],
+          ["Cost / visit", "₹740"],
         ].map(([k, v], i) => (
           <div key={k} className="anim-rise rounded-lg bg-ink-3/60 p-3" style={{ animationDelay: `${100 + i * 120}ms` }}>
             <p className="text-xs text-muted">{k}</p>
@@ -100,7 +100,7 @@ export function MeasurePanel() {
           </div>
         ))}
       </div>
-      <p className="mt-6 text-xs text-muted">Attended patients by source</p>
+      <p className="mt-6 text-xs text-muted">Showroom visits by source</p>
       <ul className="mt-3 space-y-3">
         {bars.map((b, i) => (
           <li key={b.k}>
@@ -112,7 +112,7 @@ export function MeasurePanel() {
         ))}
       </ul>
       <p className="anim-rise mt-6 rounded-lg border border-line p-3 text-xs text-muted" style={{ animationDelay: "1100ms" }}>
-        Reported in patients who walked in, joined to your MedDeskOS records. No impressions, no vanity percentages.
+        Reported in people who walked in and orders they signed, joined to your CRM. No impressions, no vanity percentages.
       </p>
     </Frame>
   );

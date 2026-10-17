@@ -7,7 +7,7 @@ const STAGES = [
   {
     name: "Get found",
     title: "Be the business a buyer finds first",
-    body: "Search, maps, ads and AI answers decide who gets the enquiry. We build the pages, profiles and campaigns that put you there, written to your sector's advertising rules. For a clinic, that means the map pack across your real catchment and condition pages your doctors review.",
+    body: "Search, maps, ads and AI answers decide who gets the enquiry. We build the pages, profiles and campaigns that put you there, written to your sector's advertising rules. For a local business, that means the map pack across the area you actually serve and pages your own experts review.",
     items: ["SEO and local search", "Google and Meta ads", "Content that AI answers cite", "Reviews and reputation"],
     href: "/services/seo-organic-growth",
     Panel: FoundPanel,
@@ -15,15 +15,15 @@ const STAGES = [
   {
     name: "Convert",
     title: "Turn enquiries into customers",
-    body: "This is where most growth is lost: the missed call, the slow reply, the form nobody followed up. We fix the site, the follow-up and the handover to sales. In healthcare, bookings land in MedDeskOS with their source attached, and WhatsApp confirms, reminds and recovers missed calls.",
-    items: ["Conversion optimisation", "WhatsApp and email automation", "CRM and lead routing", "MedDeskOS for clinics"],
+    body: "This is where most growth is lost: the missed call, the slow reply, the form nobody followed up. We fix the site, the follow-up and the handover to sales. Every enquiry lands in your CRM with its source attached, and WhatsApp confirms, reminds and recovers missed calls.",
+    items: ["Conversion optimisation", "WhatsApp and email automation", "CRM and lead routing", "Custom booking and follow-up tools"],
     href: "/services/conversion-optimization",
     Panel: ConvertPanel,
   },
   {
     name: "Measure",
     title: "Report in customers, not impressions",
-    body: "We join marketing to the sales, bookings or visits that actually happened, so budget goes where customers come from. For a clinic, that is cost per attended patient by source, doctor and branch.",
+    body: "We join marketing to the sales, bookings or visits that actually happened, so budget goes where customers come from. For a showroom, that is cost per site visit and per signed order, by source and branch.",
     items: ["GA4 and call tracking done properly", "Cost per customer by source", "Branch and channel dashboards", "Lost-enquiry reports"],
     href: "/services/analytics-reporting",
     Panel: MeasurePanel,
@@ -55,7 +55,7 @@ export function Stages() {
         One team from search result to paying customer.
       </h2>
       <p className="mt-6 max-w-2xl text-lg text-muted">
-        Most agencies stop at the enquiry. The enquiry is usually the easy part, so we run all three stages as one system. The panels show a worked example from a clinic, our deepest sector.
+        Most agencies stop at the enquiry. The enquiry is usually the easy part, so we run all three stages as one system. The panels show a worked example from an interiors studio; the same three stages run in every sector.
       </p>
 
       <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
@@ -87,7 +87,7 @@ export function Stages() {
                   How {s.name.toLowerCase()} works <span aria-hidden="true">→</span>
                 </Link>
                 <div className="mt-10 lg:hidden">
-                  <p className="mb-3 text-sm text-muted">Worked example: a paediatric clinic</p>
+                  <p className="mb-3 text-sm text-muted">Worked example: an interiors studio</p>
                   <P />
                 </div>
               </div>
@@ -96,7 +96,7 @@ export function Stages() {
         </div>
         <div className="hidden lg:block">
           <div className="sticky top-28">
-            <p className="mb-3 text-sm text-muted">Worked example: a paediatric clinic</p>
+            <p className="mb-3 text-sm text-muted">Worked example: an interiors studio</p>
             <ActivePanel key={active} />
           </div>
         </div>

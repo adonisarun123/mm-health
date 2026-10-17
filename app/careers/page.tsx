@@ -8,10 +8,10 @@ export const metadata: Metadata = {
 };
 
 const ROLES = [
-  { title: "Healthcare SEO strategist", body: "You have ranked a practice in a competitive catchment and can explain why. You know the difference between a condition page that helps and one that breaches the code." },
-  { title: "Performance marketer", body: "You judge Google Ads by cost per attended patient, not cost per click, and you know which healthcare keywords policy will refuse." },
-  { title: "Full-stack engineer", body: "Next.js, Postgres and integrations with WhatsApp and Google. You like shipping a scoped tool in weeks for a real front desk." },
-  { title: "Medical content writer", body: "You write clearly for patients, work well with a reviewing doctor, and never reach for a superlative." },
+  { title: "SEO strategist", body: "You have ranked a business in a competitive market and can explain why. You know when a page helps a buyer and when it breaches the rules of their sector." },
+  { title: "Performance marketer", body: "You judge Google and Meta ads by cost per customer, not cost per click, and you know which claims a regulated sector cannot make." },
+  { title: "Full-stack engineer", body: "Next.js, Postgres and integrations with WhatsApp and Google. You like shipping a scoped tool in weeks for a team that will use it the next morning." },
+  { title: "Content writer", body: "You write clearly for buyers, work well with a subject expert who reviews your draft, and never reach for a superlative." },
 ];
 
 export default function Careers() {

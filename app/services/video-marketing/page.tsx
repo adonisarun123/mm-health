@@ -249,9 +249,9 @@ const data: ContentPageData = {
         ],
       },
       {
-        heading: "Healthcare video carries real compliance exposure",
+        heading: "Testimonial video is where regulated sectors get caught",
         paragraphs: [
-          "Doctor advertising in India is governed by the MCI Code of Ethics 2002, Regulation 6.1 — the National Medical Commission's 2023 replacement regulations were notified and then placed in abeyance, so they are not in force and should not be cited as though they were. The Drugs and Magic Remedies (Objectionable Advertisements) Act 1954 separately bars advertising treatment to the public for a schedule of more than fifty conditions. The CCPA's 2022 guidelines require every claim to be substantiable.",
+          "In finance, property and education, on-camera claims must stay inside the SEBI advertisement code, RERA and the CCPA coaching guidelines. Healthcare is the strictest case: doctor advertising in India is governed by the MCI Code of Ethics 2002, Regulation 6.1 — the National Medical Commission's 2023 replacement regulations were notified and then placed in abeyance, so they are not in force and should not be cited as though they were. The Drugs and Magic Remedies (Objectionable Advertisements) Act 1954 separately bars advertising treatment to the public for a schedule of more than fifty conditions. The CCPA's 2022 guidelines require every claim to be substantiable.",
           "Video is the format where these get breached most easily, because a patient speaking naturally on camera will say things a written page would never have printed — an outcome promise, a comparison, a cure claim. Testimonial-style video is therefore the highest-risk asset a clinic can commission, and the risk sits with the practice.",
           "Our position: no patient footage without documented, specific, revocable consent covering the exact usage; no outcome or cure claims in any format; no before-and-after sequences for conditions covered by the DAMR schedule. Educational video with the clinician explaining a condition or a procedure achieves most of the trust benefit and is defensible.",
         ],
@@ -259,7 +259,7 @@ const data: ContentPageData = {
       {
         heading: "What we will not do",
         paragraphs: [
-          "We will not sell a single expensive brand film as a marketing programme. We will not script patient testimonials that promise outcomes, or produce before-and-after content for restricted conditions, regardless of what a competitor is publishing. We will not buy views to make a report look better — bought views distort the retention data that the entire optimisation process depends on.",
+          "We will not sell a single expensive brand film as a marketing programme. We will not script customer or patient testimonials that promise outcomes, or produce before-and-after content for restricted conditions, regardless of what a competitor is publishing. We will not buy views to make a report look better — bought views distort the retention data that the entire optimisation process depends on.",
           "We will also tell you when video is the wrong investment. If your service pages do not convert the traffic they already have, video adds audience to a leaking funnel. Fix the conversion path first; the video will be worth more when it arrives.",
         ],
       },

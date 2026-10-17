@@ -3,6 +3,28 @@ import { useState } from "react";
 
 type State = "idle" | "sending" | "sent" | "error";
 
+/** Kept in sync with the enum in app/api/leads/route.ts. */
+const SECTORS = [
+  ["ecommerce", "E-commerce or D2C"],
+  ["saas", "SaaS or technology"],
+  ["healthcare", "Healthcare"],
+  ["hospitality", "Hospitality or travel"],
+  ["real-estate", "Real estate"],
+  ["education", "Education"],
+  ["financial", "Financial services"],
+  ["professional-services", "Professional services"],
+  ["manufacturing", "Manufacturing or B2B"],
+  ["nonprofit", "Nonprofit"],
+  ["other", "Something else"],
+] as const;
+
+/** Pre-select the sector from the page the form sits on; everywhere else, ask. */
+function sectorFor(source: string) {
+  if (/^\/(healthcare-marketing|custom-tools|platform)/.test(source)) return "healthcare";
+  const m = source.match(/^\/industries\/([\w-]+)/);
+  return m && SECTORS.some(([v]) => v === m[1]) ? m[1] : "";
+}
+
 export function LeadForm({ source = "website" }: { source?: string }) {
   const [state, setState] = useState<State>("idle");
   const [error, setError] = useState("");
@@ -52,13 +74,13 @@ export function LeadForm({ source = "website" }: { source?: string }) {
         <input name="phone" required type="tel" autoComplete="tel" inputMode="tel" className={field} />
       </label>
       <label className="block sm:col-span-2">
-        <span className="mb-1.5 block text-sm text-muted">Business, practice or website</span>
-        <input name="practice" required className={field} placeholder="e.g. Sunrise Children's Clinic, or yourbrand.in" />
+        <span className="mb-1.5 block text-sm text-muted">Business name or website</span>
+        <input name="practice" required className={field} placeholder="e.g. Sunrise Interiors, or yourbrand.in" />
       </label>
       <details className="group sm:col-span-2">
         <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 text-sm text-paper [&::-webkit-details-marker]:hidden">
           <span aria-hidden="true" className="grid size-6 place-items-center rounded-full border border-line transition-transform group-open:rotate-45">+</span>
-          Add email, business type or a note (optional)
+          Add email, sector or a note (optional)
         </summary>
         <div className="mt-3 grid gap-4 sm:grid-cols-2">
           <label className="block">
@@ -66,12 +88,10 @@ export function LeadForm({ source = "website" }: { source?: string }) {
             <input name="email" type="email" autoComplete="email" className={field} />
           </label>
           <label className="block">
-            <span className="mb-1.5 block text-sm text-muted">You are</span>
-            <select name="practiceType" className={field} defaultValue={/^\/(services|industries\/(?!healthcare))/.test(source) ? "other" : "clinic"}>
-              <option value="doctor">An individual doctor</option>
-              <option value="clinic">A clinic</option>
-              <option value="hospital">A hospital or group</option>
-              <option value="other">A business in another sector</option>
+            <span className="mb-1.5 block text-sm text-muted">Your sector</span>
+            <select name="practiceType" className={field} defaultValue={sectorFor(source)}>
+              <option value="" disabled>Choose one</option>
+              {SECTORS.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
             </select>
           </label>
           <label className="block sm:col-span-2">

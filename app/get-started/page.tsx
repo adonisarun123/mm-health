@@ -15,7 +15,7 @@ export default function GetStarted() {
         <h1 className="display text-5xl sm:text-6xl">Get your free growth audit.</h1>
         <p className="mt-6 max-w-md text-lg text-muted">A strategist reviews your business and sends a written audit within a week. You keep it whether or not you hire us.</p>
         <ul className="mt-10 space-y-4 text-paper">
-          {["Where you rank across your real catchment", "What a patient sees when they try to book at night", "Ad spend that buys no appointments", "Compliance risks in your live copy"].map((t) => (
+          {["Where you rank in the market you actually serve", "What a customer sees when they try to reach you at night", "Ad spend that buys no sales", "Compliance risks in your live copy"].map((t) => (
             <li key={t} className="flex gap-3"><span className="mt-2.5 h-px w-4 shrink-0 bg-gold" />{t}</li>
           ))}
         </ul>

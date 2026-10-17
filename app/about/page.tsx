@@ -3,16 +3,16 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About Monk Mantra",
-  description: "Monk Mantra is a marketing and engineering team working across ten sectors, deepest in healthcare. How we started, how we work, and what you can hold us to.",
+  description: "Monk Mantra is a marketing and engineering team working across ten sectors. How we started, how we work, and what you can hold us to.",
   alternates: { canonical: "/about" },
 };
 
 const PATH = [
   { title: "Search first", body: "Founded around technical SEO and organic growth, not reselling paid media." },
   { title: "Performance added", body: "Paid search and social brought in-house, so channels could be planned together." },
-  { title: "Healthcare depth", body: "Built a dedicated practice for compliant patient acquisition for doctors, clinics and hospitals, alongside our other sectors." },
-  { title: "Engineering added", body: "We started building software after too many campaigns died at the front desk." },
-  { title: "One team, both halves", body: "Demand, conversion and reporting in customers, and for clinics, the front desk on MedDeskOS." },
+  { title: "Sector depth", body: "Built a playbook per sector, from D2C margins to RERA and the MCI code, because what a customer is worth differs in each." },
+  { title: "Engineering added", body: "We started building software after too many campaigns died between the enquiry and the sale." },
+  { title: "One team, both halves", body: "Demand, conversion and reporting in customers, with the tools behind them built in-house." },
 ];
 
 const COMMITMENTS = [
@@ -28,13 +28,13 @@ export default function About() {
       <section className="grain relative overflow-hidden pb-20 pt-32 lg:pb-28 lg:pt-44">
         <div aria-hidden="true" className="wash pointer-events-none absolute inset-0" />
         <div className="relative mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10">
-          <h1 className="display max-w-[16ch] text-5xl sm:text-7xl">A marketing and engineering team, deepest in healthcare.</h1>
+          <h1 className="display max-w-[16ch] text-5xl sm:text-7xl">A marketing and engineering team for growing businesses.</h1>
           <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-16">
             <p className="text-xl leading-relaxed text-paper">
-              Monk Mantra helps Indian businesses get found, turn enquiries into customers, and see what each one cost to reach. In healthcare, our largest practice, that means attended appointments for doctors, clinics and hospitals.
+              Monk Mantra helps Indian businesses get found, turn enquiries into customers, and see what each one cost to reach. We work across ten sectors, from D2C and SaaS to hospitality, property, education and healthcare.
             </p>
             <p className="text-lg leading-relaxed text-muted">
-              We are based in Bengaluru and led by Arun Mahendran, who has worked in search for more than twenty years. Over the last eighteen months we have worked with more than 45 doctors, from solo consultants to multi-speciality hospitals.
+              We are based in Bengaluru and led by Arun Mahendran, who has worked in search for more than twenty years. The team pairs search, paid media and content specialists with engineers, so the fix for a lost sale gets built rather than recommended.
             </p>
           </div>
         </div>

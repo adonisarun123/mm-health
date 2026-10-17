@@ -59,6 +59,7 @@ function Head({ title, intro }: { title: string; intro?: string }) {
 export function ContentPage({ data: d }: { data: ContentPageData }) {
   const primary = d.primaryCta || { label: "Get a free growth audit", href: "/get-started" };
   const secondary = d.secondaryCta;
+  const isProvider = /^\/(healthcare-marketing|custom-tools)/.test(d.path);
 
   return (
     <>
@@ -293,8 +294,8 @@ export function ContentPage({ data: d }: { data: ContentPageData }) {
       <section aria-labelledby="page-cta" className="border-t border-line bg-ink-2">
         <div className={`${WRAP} grid gap-12 py-20 lg:grid-cols-[1fr_1.2fr] lg:gap-20 lg:py-28`}>
           <div>
-            <h2 id="page-cta" className="display text-4xl sm:text-5xl">{d.cta?.title || "Find the patients you are already losing."}</h2>
-            <p className="mt-6 max-w-md text-lg text-muted">{d.cta?.body || "Send your practice name. You get a written audit of your local visibility, ad waste and booking friction, with no obligation."}</p>
+            <h2 id="page-cta" className="display text-4xl sm:text-5xl">{d.cta?.title || (isProvider ? "Find the patients you are already losing." : "Find the customers you are already losing.")}</h2>
+            <p className="mt-6 max-w-md text-lg text-muted">{d.cta?.body || (isProvider ? "Send your practice name. You get a written audit of your local visibility, ad waste and booking friction, with no obligation." : "Send your business name. You get a written audit of your search visibility, ad waste and enquiry-to-sale friction, with no obligation.")}</p>
           </div>
           <LeadForm source={d.path} />
         </div>

@@ -7,7 +7,7 @@ const Lead = z.object({
   phone: z.string().trim().min(7).max(30),
   practice: z.string().trim().min(2).max(200),
   email: z.union([z.literal(""), z.email()]).optional(),
-  practiceType: z.enum(["doctor", "clinic", "hospital", "other"]).default("clinic"),
+  practiceType: z.preprocess((v) => (v === "" ? undefined : v), z.enum(["ecommerce", "saas", "healthcare", "hospitality", "real-estate", "education", "financial", "professional-services", "manufacturing", "nonprofit", "other", "doctor", "clinic", "hospital"]).default("other")),
   message: z.string().trim().max(2000).optional(),
   source: z.string().max(60).optional(),
   company: z.string().optional(), // honeypot
@@ -18,7 +18,7 @@ export async function POST(req: Request) {
   try { body = await req.json(); } catch { return NextResponse.json({ error: "Invalid request." }, { status: 400 }); }
 
   const parsed = Lead.safeParse(body);
-  if (!parsed.success) return NextResponse.json({ error: "Add your name, phone number and practice name." }, { status: 422 });
+  if (!parsed.success) return NextResponse.json({ error: "Add your name, phone number and business name." }, { status: 422 });
   const d = parsed.data;
   if (d.company) return NextResponse.json({ ok: true }); // bot
 
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Our form is down right now. Email hello@monkmantra.com or WhatsApp +91 98458 60005." }, { status: 503 });
   }
 
-  const rows = Object.entries({ Name: d.name, Phone: d.phone, Email: d.email || "-", Practice: d.practice, Type: d.practiceType, Source: d.source || "-", Message: d.message || "-" })
+  const rows = Object.entries({ Name: d.name, Phone: d.phone, Email: d.email || "-", Business: d.practice, Sector: d.practiceType, Source: d.source || "-", Message: d.message || "-" })
     .map(([k, v]) => `<tr><td style="padding:6px 12px;color:#666">${k}</td><td style="padding:6px 12px">${esc(String(v))}</td></tr>`).join("");
 
   try {

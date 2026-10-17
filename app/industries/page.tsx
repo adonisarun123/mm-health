@@ -8,8 +8,8 @@ export const metadata: Metadata = {
     "Ten sectors, each with its own buying journey, channel mix and Indian regulatory layer — from RERA and SEBI to the MCI code and the CCPA coaching rules.",
   keywords: [
     "industry marketing specialists India",
-    "healthcare marketing agency",
     "D2C marketing agency",
+    "healthcare marketing agency",
     "real estate marketing agency",
     "regulated industry marketing",
     "B2B marketing agency India",
@@ -40,15 +40,14 @@ const data: ContentPageData = {
     "Indian regulation covered specifically, not generically",
     "Sector economics before sector tactics",
     "Honest statements of where we are the wrong fit",
-    "Healthcare covered deepest, in its own cluster",
+    "Each sector reported on its own commercial event",
   ],
   primaryCta: { label: "Get a free growth audit", href: "/get-started" },
   secondaryCta: { label: "Browse by service", href: "/services" },
 
   keyFacts: [
-    { label: "Deepest specialisation", value: "Healthcare — with a dedicated cluster for doctors, clinics and hospitals" },
-    { label: "Sectors covered", value: "Healthcare, D2C and ecommerce, SaaS, hospitality, real estate, professional services, education, financial, manufacturing, nonprofit" },
-    { label: "Common thread", value: "Reported on the commercial event — patient, order, booking, admission, enrolment — not on leads" },
+    { label: "Sectors covered", value: "D2C and ecommerce, SaaS, healthcare, hospitality, real estate, professional services, education, financial, manufacturing, nonprofit" },
+    { label: "Common thread", value: "Reported on the commercial event — order, booking, site visit, enrolment, appointment — not on leads" },
     { label: "Regulatory frameworks we work inside", value: "MCI Code of Ethics, Drugs and Magic Remedies Act, RERA, SEBI advertisement code, CCPA guidelines, FCRA, BCI Rule 36" },
     { label: "Data law throughout", value: "Digital Personal Data Protection Act 2023, Rules notified November 2025" },
     { label: "Starting from", value: "₹10,000 per month depending on sector; every engagement is scoped, not packaged" },
@@ -89,18 +88,6 @@ const data: ContentPageData = {
       "Each page covers the buying journey, the channel economics, the regulatory layer and the metrics we would hold ourselves to.",
     items: [
       {
-        icon: "HeartPulse",
-        title: "Healthcare providers",
-        body: "Our deepest practice. Doctors, clinics and hospitals: compliant patient acquisition, the front desk on MedDeskOS, and reporting in attended patients.",
-        href: "/healthcare-marketing",
-      },
-      {
-        icon: "HeartPulse",
-        title: "Healthcare brands",
-        body: "Pharma, medtech, diagnostics, telehealth, insurance and wellness brands, inside the DMR Act and CCPA rules.",
-        href: "/industries/healthcare",
-      },
-      {
         icon: "Wallet",
         title: "E-commerce & D2C",
         body: "Contribution margin over revenue: COD and RTO economics, retention before scale, and no dark patterns.",
@@ -111,6 +98,18 @@ const data: ContentPageData = {
         title: "SaaS & technology",
         body: "Product-led versus sales-led motion, bottom-of-funnel content that converts, and why MQL misleads.",
         href: "/industries/saas",
+      },
+      {
+        icon: "HeartPulse",
+        title: "Healthcare providers",
+        body: "Doctors, clinics and hospitals: patient acquisition inside the MCI code, local search, reputation, and reporting in attended appointments.",
+        href: "/healthcare-marketing",
+      },
+      {
+        icon: "HeartPulse",
+        title: "Healthcare brands",
+        body: "Pharma, medtech, diagnostics, telehealth, insurance and wellness brands, inside the DMR Act and CCPA rules.",
+        href: "/industries/healthcare",
       },
       {
         icon: "Globe",
@@ -191,9 +190,9 @@ const data: ContentPageData = {
     caption: "What differs by sector",
     columns: ["Sector", "The commercial event", "The binding constraint", "First move"],
     rows: [
-      ["Healthcare providers", "Attended appointment", "MCI Reg. 6.1 and the Drugs and Magic Remedies Act", "Local search and profile"],
       ["E-commerce & D2C", "Profitable order after RTO", "Contribution margin, and CCPA dark pattern rules", "Unit economics model"],
       ["SaaS", "Activated or paying account", "Long payback and global keyword competition", "Bottom-of-funnel content"],
+      ["Healthcare providers", "Attended appointment", "MCI Reg. 6.1 and the Drugs and Magic Remedies Act", "Local search and profile"],
       ["Hospitality", "Direct booking", "OTA commission and rate parity", "Direct booking path and reviews"],
       ["Real estate", "Qualified site visit, then booking", "RERA Sections 3 and 11(2)", "Qualification before sales"],
       ["Professional services", "Instruction or engagement", "BCI Rule 36 and ICAI conduct rules", "Findability and referral systems"],
@@ -228,10 +227,10 @@ const data: ContentPageData = {
         ],
       },
       {
-        heading: "Healthcare is where we go deepest",
+        heading: "One discipline, ten playbooks",
         paragraphs: [
-          "We work across all ten sectors, and healthcare is the one where we have built the most specific capability — a dedicated set of pages for individual doctors, clinics and hospitals, covering compliant patient acquisition, local search, reputation and the software that turns enquiries into attended appointments.",
-          "If you are a provider, that cluster is the right starting point rather than the healthcare industry page, which covers the rest of the sector: pharmaceutical and OTC brands, medical devices, diagnostics chains, telehealth platforms, insurers and wellness D2C.",
+          "Underneath every sector the method is the same: measure properly, fix the leaks between enquiry and sale, build assets that compound, and report on the commercial event. What changes is the playbook on top — the channels that matter, the claims that are allowed, the sales cycle the reporting has to respect.",
+          "That is why each sector has its own page rather than a paragraph on a services page. Read the one that applies to you and judge it on whether the detail is specific and checkable.",
         ],
       },
       {
@@ -248,12 +247,12 @@ const data: ContentPageData = {
     {
       question: "Do you actually specialise, or do you just have a page per industry?",
       answer:
-        "Healthcare is a genuine specialisation, with a dedicated cluster of pages covering doctors, clinics and hospitals, and software we have built specifically for practices. The other nine sectors are ones we work in and have written honestly about — the regulatory detail on each page is specific and checkable, which is the fairest test you can apply. If a page reads like it could have been written about any sector, it should not persuade you.",
+        "Each sector page is written from the work, not from a template — the economics, the channel mix and the regulatory detail are specific and checkable, which is the fairest test you can apply. If a page reads like it could have been written about any sector, it should not persuade you.",
       },
     {
       question: "Which sector do you get the best results in?",
       answer:
-        "Healthcare providers, because we go deepest there and because we can fix the operational side as well as the marketing. Beyond that, the pattern is less about sector than about fit: we do best where the buying decision involves genuine research, where the client can articulate what a customer is worth, and where there is capacity to serve additional demand. We do worst where the only lever available is deeper discounting.",
+        "The pattern is less about sector than about fit: we do best where the buying decision involves genuine research, where the client can articulate what a customer is worth, and where there is capacity to serve additional demand. We do worst where the only lever available is deeper discounting.",
     },
     {
       question: "My industry is not listed. Can you still help?",
@@ -280,9 +279,8 @@ const data: ContentPageData = {
   related: {
     title: "Where to go next",
     items: [
-      { title: "Healthcare marketing", href: "/healthcare-marketing", body: "Our deepest specialisation — doctors, clinics and hospitals." },
-      { title: "All services", href: "/services", body: "Twelve services and which problem each one solves." },
-      { title: "Custom tools", href: "/custom-tools", body: "Software built where a campaign is not the answer." },
+            { title: "All services", href: "/services", body: "Twelve services and which problem each one solves." },
+      { title: "Marketing automation", href: "/services/marketing-automation", body: "Software built where a campaign is not the answer." },
       { title: "How we measure results", href: "/case-studies", body: "Our reporting method, stated plainly." },
       { title: "About Monk Mantra", href: "/about", body: "Who we are and how we work." },
       { title: "Get started", href: "/get-started", body: "The free written audit we do before any engagement." },

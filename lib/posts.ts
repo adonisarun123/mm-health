@@ -41,10 +41,10 @@ export function nextStepFor(p: Post): { title: string; href: string } {
 
 /** Blog topics. Two slugs reuse the old site's category URLs so existing links keep working. */
 export const TOPICS = [
-  { slug: "healthcare-marketing", label: "Healthcare & wellness", blurb: "Patient acquisition, local search, medical advertising rules and wellness brands." },
-  { slug: "travel-hospitality-marketing", label: "Hospitality & travel", blurb: "Direct bookings, OTA trade-offs, and marketing for resorts, hotels and homestays." },
-  { slug: "d2c-ecommerce-marketing", label: "D2C & ecommerce", blurb: "Acquisition cost, retention flows and scaling paid social for consumer brands." },
   { slug: "growth-strategy", label: "Growth & strategy", blurb: "Search, ads, analytics and the commercial thinking underneath them." },
+  { slug: "d2c-ecommerce-marketing", label: "D2C & ecommerce", blurb: "Acquisition cost, retention flows and scaling paid social for consumer brands." },
+  { slug: "travel-hospitality-marketing", label: "Hospitality & travel", blurb: "Direct bookings, OTA trade-offs, and marketing for resorts, hotels and homestays." },
+  { slug: "healthcare-marketing", label: "Healthcare & wellness", blurb: "Patient acquisition, local search, medical advertising rules and wellness brands." },
 ] as const;
 export type TopicSlug = (typeof TOPICS)[number]["slug"];
 
