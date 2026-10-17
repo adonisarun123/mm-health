@@ -32,6 +32,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     headline: p.title,
     description: p.description,
     datePublished: p.date,
+    dateModified: p.updated || p.date,
     mainEntityOfPage: `${SITE.url}/blog/${p.slug}`,
     author: { "@type": "Organization", name: "Monk Mantra", url: SITE.url },
     publisher: { "@id": `${SITE.url}/#organization` },
@@ -44,7 +45,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           <Link href="/blog" className="text-sm text-muted hover:text-paper">Notes</Link>
           <h1 className="display mt-6 max-w-[22ch] text-4xl sm:text-6xl">{p.title}</h1>
           <p className="mt-8 max-w-2xl text-xl leading-relaxed text-paper">{p.excerpt}</p>
-          <p className="mt-6 text-sm text-muted">Monk Mantra, <time dateTime={p.date}>{fmtDate(p.date)}</time>, {p.readMins} min read</p>
+          <p className="mt-6 text-sm text-muted">Monk Mantra, <time dateTime={p.date}>{fmtDate(p.date)}</time>{p.updated && <>, updated <time dateTime={p.updated}>{fmtDate(p.updated)}</time></>}, {p.readMins} min read</p>
         </header>
         <div className="border-t border-line">
           <div className="mx-auto grid max-w-[1320px] gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[minmax(0,68ch)_1fr] lg:gap-20 lg:px-10 lg:py-20">

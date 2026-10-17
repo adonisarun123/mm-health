@@ -22,7 +22,7 @@ const ROUTES: [string, number][] = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages: MetadataRoute.Sitemap = ROUTES.map(([p, priority]) => ({ url: `${SITE.url}${p}`, lastModified: new Date(), changeFrequency: "monthly", priority }));
-  const posts: MetadataRoute.Sitemap = getPosts().map((p) => ({ url: `${SITE.url}/blog/${p.slug}`, lastModified: new Date(p.date), changeFrequency: "yearly", priority: 0.6 }));
+  const posts: MetadataRoute.Sitemap = getPosts().map((p) => ({ url: `${SITE.url}/blog/${p.slug}`, lastModified: new Date(p.updated || p.date), changeFrequency: "yearly", priority: 0.6 }));
   return [...pages, { url: `${SITE.url}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
     ...TOPICS.map((t) => ({ url: `${SITE.url}/blog/category/${t.slug}`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.6 })), ...posts];
 }

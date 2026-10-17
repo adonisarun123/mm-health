@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-export type Post = { slug: string; title: string; excerpt: string; description: string; date: string; readMins: number; html: string; category?: string };
+export type Post = { slug: string; title: string; excerpt: string; description: string; date: string; readMins: number; html: string; category?: string; updated?: string };
 
 const DIR = path.join(process.cwd(), "content/posts");
 
