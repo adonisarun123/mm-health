@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { fmtDate, getPosts } from "@/lib/posts";
-import { PostList, TopicNav } from "@/components/PostList";
+import { getPosts } from "@/lib/posts";
+import { BlogCta, BlogHero, TopicNav, TopicTiles, toCard } from "@/components/PostList";
+import { FeatureCard, MiniCard } from "@/components/PostCard";
+import { PostGrid } from "@/components/PostGrid";
 
 export const metadata: Metadata = {
   title: "Notes on marketing that pays back",
@@ -11,28 +12,37 @@ export const metadata: Metadata = {
 
 export default function Blog() {
   const posts = getPosts();
-  const [lead, ...rest] = posts;
+  const cards = posts.map(toCard);
+  const [lead, ...picks] = cards.slice(0, 4);
+  const rest = cards.slice(4);
   return (
     <>
-      <section className="mx-auto max-w-[1320px] px-4 pb-16 pt-32 sm:px-6 lg:px-10 lg:pt-44">
-        <h1 className="display text-5xl sm:text-7xl">Notes</h1>
-        <p className="mt-6 max-w-xl text-lg text-muted">On search, paid media, conversion and the rules that constrain them. Notes from every sector we work in.</p>
+      <BlogHero
+        eyebrow="Notes"
+        title="Marketing notes that pay back"
+        blurb="On search, paid media, conversion and the rules that constrain them. Written from the work, across every sector we serve."
+      >
         <TopicNav posts={posts} />
-      </section>
+      </BlogHero>
 
       {lead && (
-        <section className="border-t border-line">
-          <Link href={`/blog/${lead.slug}`} className="group mx-auto grid max-w-[1320px] gap-6 px-4 py-14 sm:px-6 lg:grid-cols-[1.4fr_1fr] lg:gap-16 lg:px-10 lg:py-20">
-            <h2 className="display text-3xl transition-colors group-hover:text-gold sm:text-5xl">{lead.title}</h2>
-            <div>
-              <p className="text-lg leading-relaxed text-muted">{lead.excerpt}</p>
-              <p className="mt-6 text-sm text-muted"><time dateTime={lead.date}>{fmtDate(lead.date)}</time>, {lead.readMins} min read</p>
+        <section className="mx-auto max-w-[1320px] px-4 pt-14 sm:px-6 lg:px-10 lg:pt-20">
+          <div className="grid gap-5 lg:grid-cols-[1.7fr_1fr]">
+            <FeatureCard p={lead} />
+            <div className="grid gap-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.12em] text-muted">Also new</p>
+              {picks.map((p) => <MiniCard key={p.slug} p={p} />)}
             </div>
-          </Link>
+          </div>
         </section>
       )}
 
-      <PostList posts={rest} />
+      <div className="mt-16 lg:mt-24">
+        <TopicTiles posts={posts} />
+      </div>
+
+      <PostGrid posts={rest} heading="The archive" />
+      <BlogCta />
     </>
   );
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TOPICS, getPosts, topicOf } from "@/lib/posts";
-import { PostList, TopicNav } from "@/components/PostList";
+import { BlogCta, BlogHero, TopicNav, toCard } from "@/components/PostList";
+import { PostGrid } from "@/components/PostGrid";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -23,13 +24,11 @@ export default async function TopicPage({ params }: { params: Promise<{ topic: s
   const posts = all.filter((p) => topicOf(p) === t.slug);
   return (
     <>
-      <section className="mx-auto max-w-[1320px] px-4 pb-16 pt-32 sm:px-6 lg:px-10 lg:pt-44">
-        <p className="text-muted">Notes</p>
-        <h1 className="display mt-3 text-5xl sm:text-7xl">{t.label}</h1>
-        <p className="mt-6 max-w-xl text-lg text-muted">{t.blurb}</p>
+      <BlogHero eyebrow="Notes" title={t.label} blurb={t.blurb}>
         <TopicNav posts={all} active={t.slug} />
-      </section>
-      <PostList posts={posts} />
+      </BlogHero>
+      <PostGrid posts={posts.map(toCard)} heading={`${t.label} notes`} />
+      <BlogCta />
     </>
   );
 }
