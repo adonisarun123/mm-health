@@ -1,6 +1,6 @@
 {
  "slug": "how-to-fix-core-web-vitals",
- "title": "How To Fix Core Web Vitals",
+ "title": "How to Fix Core Web Vitals: LCP, CLS and INP",
  "excerpt": "What LCP, CLS and INP measure, the thresholds Google uses, and step-by-step fixes for the most common Search Console issues, including slow largest paint and layout shift.",
  "description": "What Core Web Vitals (LCP, CLS, INP) measure and step-by-step fixes for common Search Console issues like slow LCP and layout shift.",
  "date": "2023-12-18",
