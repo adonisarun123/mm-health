@@ -1,6 +1,10 @@
+/** Canonical base URL. A localhost value (e.g. a stray env var) is ignored on Vercel, where it would poison every canonical tag. */
+const envUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const siteUrl = envUrl && !(process.env.VERCEL && /localhost|127\.0\.0\.1/.test(envUrl)) ? envUrl : "https://www.monkmantra.com";
+
 export const SITE = {
   name: "Monk Mantra",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.monkmantra.com",
+  url: siteUrl,
   email: "hello@monkmantra.com",
   phone: "+91 98458 60005",
   phoneHref: "tel:+919845860005",
