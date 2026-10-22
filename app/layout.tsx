@@ -7,6 +7,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileBar } from "@/components/MobileBar";
+import { SiteChrome } from "@/components/SiteChrome";
 import { SITE } from "@/lib/site";
 
 const bricolage = Bricolage_Grotesque({
@@ -60,10 +61,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-paper focus:px-4 focus:py-2 focus:text-ink">
           Skip to content
         </a>
-        <Header />
+        <SiteChrome><Header /></SiteChrome>
         <main id="main">{children}</main>
-        <Footer />
-        <MobileBar />
+        <SiteChrome>
+          <Footer />
+          <MobileBar />
+        </SiteChrome>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
         {/* gtag.js is ~500KB uncompressed; load it after the page is idle so it never competes with first paint. */}
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${SITE.ga4}`} strategy="lazyOnload" />
